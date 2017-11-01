@@ -1,96 +1,1871 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>Lc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="读书笔记；移动开发；node.js">
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="读书笔记；移动开发；node.js">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lc">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://lichong951.github.io/index.html">
 <meta property="og:site_name" content="Lc">
 <meta property="og:description" content="读书笔记；移动开发；node.js">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lc">
 <meta name="twitter:description" content="读书笔记；移动开发；node.js">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lichong951.github.io/"/>
+
+
+
+
+
+  <title>Lc</title>
   
-    <link rel="alternate" href="/atom.xml" title="Lc" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Lc</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">lichong博客</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/03/hello-world/" class="article-date">
-  <time datetime="2017-02-03T09:05:24.000Z" itemprop="datePublished">2017-02-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/03/hello-world/">Hello World</a>
-    </h1>
+    
   
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lc</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">lichong博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/04/12/framework-imageloader/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/12/framework-imageloader/" itemprop="url">网络图片加载工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T19:58:32+08:00">
+                2017-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+      
+
+      
+        
+          
+            <h2 id="《Android-Universal-Image-Loader》"><a href="#《Android-Universal-Image-Loader》" class="headerlink" title="《Android-Universal-Image-Loader》"></a>《Android-Universal-Image-Loader》</h2><h5 id="1、-数据结构分析"><a href="#1、-数据结构分析" class="headerlink" title="1、 数据结构分析"></a>1、 数据结构分析</h5><pre><code>/** Stores not strong references to objects */
+private final Map&lt;String, Reference&lt;Bitmap&gt;&gt; softMap = Collections.synchronizedMap(new HashMap&lt;String, Reference&lt;Bitmap&gt;&gt;());
+
+private final List&lt;Bitmap&gt; hardCache = Collections.synchronizedList(new LinkedList&lt;Bitmap&gt;());
+</code></pre><p>LinkedHashMap中的get()方法不仅返回所匹配的值，并且在返回前还会将所匹配的key对应的entry调整在列表中的顺序（LinkedHashMap使用双链表来保存数据），让它处于列表的最后。当然，这种情况必须是在LinkedHashMap中accessOrder==true的情况下才生效的，反之就是get()方法不会改变被匹配的key对应的entry在列表中的位置</p>
+<p>LinkedHashMap:</p>
+<pre><code>根据链表中元素的顺序可以分为：按插入顺序的链表，和按访问顺序(调用get方法)的链表。  
+
+默认是按插入顺序排序，如果指定按访问顺序排序，那么调用get方法后，会将这次访问的元素移至链表尾部，不断访问可以形成按访问顺序排序的链表。  可以重写removeEldestEntry方法返回true值指定插入元素时移除最老的元素。 
+</code></pre><h5 id="2、-缓存策略分析"><a href="#2、-缓存策略分析" class="headerlink" title="2、 缓存策略分析"></a>2、 缓存策略分析</h5><p>UIL中的内存缓存策略</p>
+<pre><code>1. 只使用的是强引用缓存 
+
+LruMemoryCache（这个类就是这个开源框架默认的内存缓存类，缓存的是bitmap的强引用，下面我会从源码上面分析这个类）
+ 2.使用强引用和弱引用相结合的缓存有
+
+ UsingFreqLimitedMemoryCache（如果缓存的图片总量超过限定值，先删除使用频率最小的bitmap）
+
+LRULimitedMemoryCache（这个也是使用的lru算法，和LruMemoryCache不同的是，他缓存的是bitmap的弱引用）
+FIFOLimitedMemoryCache（先进先出的缓存策略，当超过设定值，先删除最先加入缓存的bitmap）
+LargestLimitedMemoryCache(当超过缓存限定值，先删除最大的bitmap对象)
+LimitedAgeMemoryCache（当 bitmap加入缓存中的时间超过我们设定的值，将其删除）
+ 3.只使用弱引用缓存
+
+ WeakMemoryCache（这个类缓存bitmap的总大小没有限制，唯一不足的地方就是不稳定，缓存的图片容易被回收掉）
+</code></pre><p>我们直接选择UIL中的默认配置缓存策略进行分析。</p>
+<p>ImageLoaderConfiguration config = ImageLoaderConfiguration.createDefault(context);<br>ImageLoaderConfiguration.createDefault(…)这个方法最后是调用Builder.build()方法创建默认的配置参数的。默认的内存缓存实现是LruMemoryCache，磁盘缓存是UnlimitedDiscCache。</p>
+<p>业务如下</p>
+<pre><code>① UI：请求数据，使用唯一的Key值索引Memory Cache中的Bitmap。
+
+② 内存缓存：缓存搜索，如果能找到Key值对应的Bitmap，则返回数据。否则执行第三步。
+
+③ 硬盘存储：使用唯一Key值对应的文件名，检索SDCard上的文件。
+
+④ 如果有对应文件，使用BitmapFactory.decode*方法，解码Bitmap并返回数据，同时将数据写入缓存。如果没有对应文件，执行第五步。
+
+⑤ 下载图片：启动异步线程，从数据源下载数据(Web)。
+
+⑥ 若下载成功，将数据同时写入硬盘和缓存，并将Bitmap显示在UI中。
+</code></pre><h5 id="3、-设计模式应用分析"><a href="#3、-设计模式应用分析" class="headerlink" title="3、 设计模式应用分析"></a>3、 设计模式应用分析</h5><ol>
+<li>单例模式的应用在</li>
+<li>builder模式</li>
+</ol>
+<h5 id="4、-线程池"><a href="#4、-线程池" class="headerlink" title="4、 线程池"></a>4、 线程池</h5><p>线程池能够带来三个好处：</p>
+<pre><code>第一：降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗
+第二：提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行
+第三：提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控
+</code></pre><p><strong>创建一个ThreadPoolExecutor需要的参数：</strong></p>
+<pre><code>corePoolSize（线程池的基本大小）：当提交一个任务到线程池时，线程池会创建一个线程来执行任务，即使其他空闲的基本线程能够执行新任务也会创建线程，等到需要执行的任务数大于线程池基本大小时就不再创建。如果调用了线程池的prestartAllCoreThreads方法，线程池会提前创建并启动所有基本线程。
+
+runnableTaskQueue（任务队列）：用于保存等待执行的任务的阻塞队列。 可以选择以下几个阻塞队列。
+
+ArrayBlockingQueue：是一个基于数组结构的有界阻塞队列，此队列按 FIFO（先进先出）原则对元素进行排序。
+
+LinkedBlockingQueue：一个基于链表结构的阻塞队列，此队列按FIFO （先进先出） 排序元素，吞吐量通常要高于ArrayBlockingQueue。静态工厂方法Executors.newFixedThreadPool()使用了这个队列。
+
+SynchronousQueue：一个不存储元素的阻塞队列。每个插入操作必须等到另一个线程调用移除操作，否则插入操作一直处于阻塞状态，吞吐量通常要高于LinkedBlockingQueue，静态工厂方法Executors.newCachedThreadPool使用了这个队列。
+
+PriorityBlockingQueue：一个具有优先级的无限阻塞队列。
+
+maximumPoolSize（线程池最大大小）：线程池允许创建的最大线程数。如果队列满了，并且已创建的线程数小于最大线程数，则线程池会再创建新的线程执行任务。值得注意的是如果使用了无界的任务队列这个参数就没什么效果。
+
+ThreadFactory：用于设置创建线程的工厂，可以通过线程工厂给每个创建出来的线程设置更有意义的名字。
+
+RejectedExecutionHandler（饱和策略）：当队列和线程池都满了，说明线程池处于饱和状态，那么必须采取一种策略处理提交的新任务。这个策略默认情况下是AbortPolicy，表示无法处理新任务时抛出异常。以下是JDK1.5提供的四种策略。
+    # AbortPolicy：直接抛出异常。
+    # CallerRunsPolicy：只用调用者所在线程来运行任务。
+    # DiscardOldestPolicy：丢弃队列里最近的一个任务，并执行当前任务。
+    # DiscardPolicy：不处理，丢弃掉。
+当然也可以根据应用场景需要来实现RejectedExecutionHandler接口自定义策略。如记录日志或持久化不能处理的任务。
+
+keepAliveTime（线程活动保持时间）：线程池的工作线程空闲后，保持存活的时间。所以如果任务很多，并且每个任务执行的时间比较短，可以调大这个时间，提高线程的利用率。
+
+TimeUnit（线程活动保持时间的单位）：可选的单位有天（DAYS），小时（HOURS），分钟（MINUTES），毫秒(MILLISECONDS)，微秒(MICROSECONDS, 千分之一毫秒)和毫微秒(NANOSECONDS, 千分之一微秒)。
+</code></pre><p><strong>用Executors静态工厂方法创建的线程池类型：</strong></p>
+<pre><code>a) newFixedThreadPool：创建一个定长的线程池。达到最大线程数后，线程数不再增长。如果一个线程由于非预期Exception而结束，线程池会补充一个新的线程。
+
+b) newCachedThreadPool：创建一个可缓存的线程池。当池长度超过处理需求时，可以回收空闲的线程。
+
+c) newSingleThreadPool：创建一个单线程executor。
+
+d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时的以及周期性的任务执行。类似于Timer。但是，Timer是基于绝对时间，对系统时钟的改变是敏感的，而ScheduledThreadPoolExecutor只支持相对时间。
+     1) Timer是创建唯一的线程来执行所有的timer任务。如果一个任务超时了，会导致其他的TimerTask时间准确性出问题。
+     2）如果TimerTask抛出uncheck 异常，Timer将会产生无法预料的行为。因此，ScheduledThreadPoolExecutor可以完全代替Timer。
+</code></pre><p><strong>合理的配置线程池</strong></p>
+<pre><code>要想合理的配置线程池，就必须首先分析任务特性，可以从以下几个角度来进行分析：
+
+任务的性质：CPU密集型任务，IO密集型任务和混合型任务。
+任务的优先级：高，中和低。
+任务的执行时间：长，中和短。
+任务的依赖性：是否依赖其他系统资源，如数据库连接。
+
+任务性质不同的任务可以用不同规模的线程池分开处理。CPU密集型任务配置尽可能小的线程，如配置Ncpu+1个线程的线程池。IO密集型任务则由于线程并不是一直在执行任务，则配置尽可能多的线程，如2*Ncpu。混合型的任务，如果可以拆分，则将其拆分成一个CPU密集型任务和一个IO密集型任务，只要这两个任务执行的时间相差不是太大，那么分解后执行的吞吐率要高于串行执行的吞吐率，如果这两个任务执行时间相差太大，则没必要进行分解。我们可以通过Runtime.getRuntime().availableProcessors()方法获得当前设备的CPU个数。
+
+优先级不同的任务可以使用优先级队列PriorityBlockingQueue来处理。它可以让优先级高的任务先得到执行，需要注意的是如果一直有优先级高的任务提交到队列里，那么优先级低的任务可能永远不能执行。
+
+执行时间不同的任务可以交给不同规模的线程池来处理，或者也可以使用优先级队列，让执行时间短的任务先执行。
+
+依赖数据库连接池的任务，因为线程提交SQL后需要等待数据库返回结果，如果等待的时间越长CPU空闲时间就越长，那么线程数应该设置越大，这样才能更好的利用CPU。
+
+建议使用有界队列，有界队列能增加系统的稳定性和预警能力，可以根据需要设大一点，比如几千。有一次我们组使用的后台任务线程池的队列和线程池全满了，不断的抛出抛弃任务的异常，通过排查发现是数据库出现了问题，导致执行SQL变得非常缓慢，因为后台任务线程池里的任务全是需要向数据库查询和插入数据的，所以导致线程池里的工作线程全部阻塞住，任务积压在线程池里。如果当时我们设置成无界队列，线程池的队列就会越来越多，有可能会撑满内存，导致整个系统不可用，而不只是后台任务出现问题。当然我们的系统所有的任务是用的单独的服务器部署的，而我们使用不同规模的线程池跑不同类型的任务，但是出现这样问题时也会影响到其他任务。
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/30/arithmetic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/30/arithmetic/" itemprop="url">算法（java版）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:43:22+08:00">
+                2017-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><pre><code>public static void bubbleSort(int[] a) {
+    if (a == null) {
+        return;
+    }
+
+    for (int i = 0; i &lt; a.length; i++) {
+        for (int j = a.length - 1; j &gt; i; j--) {
+            if (a[j - 1] &gt; a[j]) {
+                int temp = a[j];
+                a[j] = a[j - 1];
+                a[j - 1] = temp;
+            }
+
+        }
+    }
+
+    for (int i = 0; i &lt; a.length; i++) {
+        System.out.println(a[i]);
+    }
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/30/book-3_data-structure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/30/book-3_data-structure/" itemprop="url">《大话数据结构》</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T17:38:41+08:00">
+                2017-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="一、名词解释"><a href="#一、名词解释" class="headerlink" title="一、名词解释"></a>一、名词解释</h3><p>1、 数据结构：是相互之间存在一种或多种特定关系的数据元素的集合</p>
+<p>2、 数据：是描述客观事物的符号，是计算机中可以操作的对象是能被计算机识别；并输入计算机处理的符号集合</p>
+<p>3、 数据元素：是组成数据的有一定意义的基本单位，在计算机中通常作为整体处理；也被称为记录</p>
+<p>4、 数据项：一个数据元素可以由若干个数据项组成</p>
+<p>5、 数据项是数据不可分割的最小单位</p>
+<p>6、 数据对象：是性质相同的数据元素的集合，是数据的子集</p>
+<p>7、 逻辑结构：是指数据对象中元素之间的相互关系</p>
+<pre><code>7.1、 集合结构：集合结构中的数据元素除了同属于一个集合处，它们之间没有其他关系
+
+7.2、 线性结构：数据元素之间是一对一的关系
+
+7.3、 树形结构：数据元素存在一种一对多的层次关系
+
+7.4、 图形结构：数据元素是多对多的关系
+</code></pre><p>8、 物理结构：是指数据的逻辑结构在计算机中存储形式</p>
+<pre><code>8.1、 顺序存储结构：是把数据元素存放在地址连续的存储单元里，其数据间的逻辑关系和物理关系是一致的
+
+8.2、 链式存储结构：是把数据元素存放在任意的存储单元里，这组存储单元可以是连续的，也可以是不连续的
+</code></pre><p>9、 数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称</p>
+<pre><code>9.1、 原子类型：是不可以再分解的基本类型包括整型、实型、字符型等
+
+9.2、 结构类型：由若干个类型组合而成，是可以再分解的，例如：整型数组是由若干整型数据组成的
+</code></pre><p>10、 抽象数据类型（Abstract Data Type；ADT）是指一个数学模型及定义在该模型上的一组操作</p>
+<h2 id="第二章-算法"><a href="#第二章-算法" class="headerlink" title="第二章 算法"></a>第二章 算法</h2><p>1、 算法：是解决特定问题解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作</p>
+<pre><code>注：算法至少有一个或多个输出
+</code></pre><p>2、 算法的特性</p>
+<pre><code>2.1 有穷性： 指算法在执行有限的步骤后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成
+
+2.2 确定性：算法的每一步骤都具有确定的含义，不会出现二义性
+
+2.3 可行性：算法的每一步都必须是可行的，也就是说每一步都能够通过执行有限次数完成
+</code></pre><p>3、 算法设计的要求</p>
+<pre><code>3.1 正确性：算法的正确性是指算法至少应该具有输入，输出和加工处理无歧义性，能正确反映问题的需求能够得到问题的正确答案
+
+3.2 可读性：算法设计的另一目的是为了便于阅读理解和交流
+
+3.3 健壮性：当输入数据不合法时，算法也能做出相关处理，而不是产生异常或莫名其妙的结果
+
+3.4 时间效率高和存储量低
+</code></pre><p>4、 算法效率的度量方法</p>
+<pre><code>4.1 事后统计方法：这种方法主要是通过设计好的测试程序和数据，利用计算机计时器对不同算法编制的程序的运行时间进行比较，从而确定算法效率的高低
+
+4.2 事前分析估算方法：在计算机程序编制前，依据统计方法对算法进行估算
+
+注： 一个程序的运行时间，依赖于算法的好坏和问题的输入规模
+</code></pre><p>5、 函数的渐进增长：给定两个函数f（n）和g（n），如果存在一个整数N，使得对于所有的n&gt;N,f(n)总是比g（n）大，那么我们说f（n）的增长渐进快于g（n）</p>
+<pre><code>注： 判断一个算法的效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项（最高阶项）的阶数
+</code></pre><p>6、 算法时间复杂度定义：在进行算法分析时，语句总的执行次数T（n）是关于问题规模n的函数，进而分析T（n）随n的变化情况并确定T（n）的数量级，算法的时间复杂度，也就是算法的时间度量，记作T（n）=O（f（n）），它表示随问题规模n的增长，算法执行时间的增长率和f（n）的增长率相同，称作算法的渐进时间复杂度。简称为时间复杂度，其中f（n）是问题规模n的某个函数。</p>
+<p>7、 推导大O阶</p>
+<pre><code>7.1 用常数 1 取代运行时间中的所有加法常数。
+
+7.2 在修改后的运行次数函数中，只保留最高阶项
+
+7.3 如果最高阶存在且不是 1，则去除与这个项相乘的常数，得到的结果就是大O阶
+</code></pre><p>8、 线性阶</p>
+<p>9、 对数阶：O（log n）</p>
+<p>10、 平方阶： O（n*n）</p>
+<p>11、 常见的时间复杂度</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">执行次数的函数</th>
+<th style="text-align:right">阶</th>
+<th style="text-align:center">非正式术语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:right">O（1）</td>
+<td style="text-align:center">常数阶</td>
+</tr>
+<tr>
+<td style="text-align:left">2*n+3</td>
+<td style="text-align:right">O（n）</td>
+<td style="text-align:center">线性阶</td>
+</tr>
+<tr>
+<td style="text-align:left">3<em>n^2+2</em>n+1</td>
+<td style="text-align:right">O（n^2）</td>
+<td style="text-align:center">平方阶</td>
+</tr>
+<tr>
+<td style="text-align:left">5*log_2 n+20</td>
+<td style="text-align:right">O（log_n）</td>
+<td style="text-align:center">对数阶</td>
+</tr>
+<tr>
+<td style="text-align:left">2<em>n+3</em>n*log_2 n+19</td>
+<td style="text-align:right">O（n*log_n）</td>
+<td style="text-align:center">n*log_n阶</td>
+</tr>
+<tr>
+<td style="text-align:left">6<em>n^3+2</em>n^2+3n+4</td>
+<td style="text-align:right">O（n^3）</td>
+<td style="text-align:center">立方阶</td>
+</tr>
+<tr>
+<td style="text-align:left">2^n</td>
+<td style="text-align:right">O（2^n）</td>
+<td style="text-align:center">指数阶</td>
+</tr>
+</tbody>
+</table>
+<p>12、最坏情况运行时间是一种保证，那就是运行时间将不会再坏了，在应用中，这里一种最重要的需求，通常除非特别指定，我们提到的运行时间都是最坏情况的运行时间</p>
+<p>13、算法的空间复杂度通过计算算法所需的存储空间实现，算法空间复杂度的计算公式记作：S（n）=O（f（n）），其中，n为问题的规模，f（n）为语句关于n所占存储空间的函数</p>
+<h2 id="第三章-线性表"><a href="#第三章-线性表" class="headerlink" title="第三章 线性表"></a>第三章 线性表</h2><p>1、 线性表：零个或多个数据元素的有限序列</p>
+<p>2、 若将线性表记为（a_1,…,a_i-1,a_i,a_i+1,…,a_n）,则表中a_i-1领先于a_i,a_i领先于a_i+1,称a_i-1是a_i的直接前驱元素，a_i+1是a_i的直接后继元素。当i=1,2,…,n-1时，a_i有仅有一个后继元素，当i=2，3，…,n时，a_i有仅有一个直接前驱。</p>
+<pre><code>注：1） 线性表元素的个数n（n&gt;=0）定义为线性表的长度，当n=0时，称为空表。
+
+    2） 在较复杂的线性表中，一个数据元素可以由若干个数据项组成
+</code></pre><p>3、 线性表的顺序存储结构，指的是用一段地址连续的存储单元依次存储线性表的数据元素</p>
+<pre><code>属性：
+    1） 存储空间的启始位置
+    2） 线性表的最大存储位置
+    3） 线性表的当前长度
+</code></pre><p>4、 线性表顺序存储结构优缺点</p>
+<pre><code>优点
+    1） 无须为表中元素之间的逻辑关系而增加额外的存储空间
+    2） 可以快速地存取表中任一位置的元素
+
+缺点
+    1） 插入和删除操作需要移动大量元素
+    2） 当线性表长度变化较大时，难以确定存储空间的容量
+    3） 造成存储空间的“碎片”
+</code></pre><p>5、 线性表的链式存储结构的特点是用任一组任意的存储单元存储线性表的数据元素，这组存储单元可以是连续的，也可以是不连续的。</p>
+<p>6、 为了表示每个数据元素a_i与其直接后继数据元素a_i+1之间的逻辑关系，对数据元素a_i来说，除来存储其本身的信息之外，还需存储一个指示其直接后继的信息（即直接后继的存储位置）我们把存储数据元素信息的域称为数据域，把存储直接后继位置的域称为指针域。指针域中存储的信息称做指针或链，这两部分信息组成数据元素a_i的存储映像，称为节点（Node）。<br>    n个结点（a_i的存储映像）链结成一个链表，即为线性表（a_i,a_2,…a_n）的链式存储结构，因此链表的每个结点中包含一个指针域，所以叫做单链表</p>
+<p>7、 单链表结构与顺序存储结构优缺点</p>
+<pre><code>1） 存储分配方式
+    *  顺序存储结构用一段连续的存储单元依次存储线性表的数据元素
+    *  单链表采用链式存储结构，用一组任意的存储单元存放线性表的元素
+
+2）时间性能
+    *  查找
+        1） 顺序存储结构O（1）
+        2） 单链表O（n）
+    *  插入和删除
+        1） 顺序存储结构需要平均移动表长一半的元素，时间为O（n）
+        2） 单链表在线出某位置的指针后，插入和删除时间仅为O（1）
+
+    *  空间性能
+        1） 顺序存储结构需要预分配存储空间，分大了，浪费，分小了易发生上溢
+        2） 单链表不需要分配存储空间，只要有就可以分配，元素个数也不受限制
+</code></pre><h3 id="8、-静态链表：用数组描述的链表叫做静态链表"><a href="#8、-静态链表：用数组描述的链表叫做静态链表" class="headerlink" title="8、 静态链表：用数组描述的链表叫做静态链表"></a>8、 静态链表：用数组描述的链表叫做静态链表</h3><p>9、 静态链表的优缺点：</p>
+<pre><code>*  优点
+    1） 在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了在顺序存储结构中插入和删除操作需要移动大量元素的缺点
+*  缺点
+    1） 没有解决连续存储分配带来的表长难以确定的问题
+    2） 失去了顺序存储结构随机存取的特性
+</code></pre><p>10、 将单链表中终端结点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表，简称循环链表</p>
+<p>11、 双向链表（double linked list）是在单链表的每个结点，再设置一个指向其前驱结点的指针域        </p>
+<h2 id="第四章-线性表"><a href="#第四章-线性表" class="headerlink" title="第四章 线性表"></a>第四章 线性表</h2><p>1、 栈（stack）是限定仅在表尾进行插入和删除操作的线性表</p>
+<pre><code>注：允许插入和删除的一端称为栈顶（top）另一端称为栈底（bootom），不含任何数据元素的栈称为空栈，栈又称为后进先出（Last In First Out）的线性表，简称LIFO结构
+</code></pre><p>2、 栈的顺序存储结构</p>
+<p>3、 两栈共享空间</p>
+<p>4、 栈的链式存储结构，简称为链栈</p>
+<pre><code>注： 如果栈的使用过程中元素变化不可预料，有时很小，有时很大，那么最好用链栈，反之，如果它的变化在可控范围内，建议使用顺序栈会更好一些
+</code></pre><p>5、 栈的应用–递归</p>
+<p>6、 斐波那契数列实现</p>
+<p>7、 递归定义： 把一个直接调用自己或通过一系列的调用语句间接地调用自己的函数，称做递归函数</p>
+<p>8、 每个递归定义必须至少有一个条件，满足时递归不再进行，即不再引用自身而是返回值退出</p>
+<p>9、 迭代和递归的区别是： 迭代使用的是循环结构；递归使用的是选择结构</p>
+<p>10、 栈的应用–四则运算表达式求值</p>
+<pre><code>10.1  后缀（逆波兰）表示法定义
+</code></pre><p>11、 中缀表达式转后缀表达式</p>
+<p>12、 队列：是只允许在一端进行插入操作，而在另一端进行删除操作的线性表</p>
+<pre><code>注： 队列是一种先进先出（Fist In First Out）的线性表，简称FIFO，允许插入的一端为对尾，允许删除的一端称为对头
+</code></pre><p>13、 队列顺序存储</p>
+<p>14、 循环队列定义： 头尾相接的顺序存储结构称为循环队列</p>
+<p>15、 队列的链式存储结构： 其实就是线性表的单链表，只不过它只能尾进头出而已，简称为链队列</p>
+<pre><code>注：可以确定队列长度最大值的情况下，建议用循环队列，如果你无法预估队列的长度时则用链队列
+</code></pre><h2 id="第五章-串"><a href="#第五章-串" class="headerlink" title="第五章 串"></a>第五章 串</h2><p>1、 串（String）是由零个或多个字符组成的有限序列，又名叫字符串</p>
+<p>2、 串的顺序存储结构</p>
+<p>3、串的链式存储结构</p>
+<pre><code>注：串的链式存储结构除了在连接串与串操作有一定方便之外，总的来说不如顺序存储灵活，性能也不如顺序存储结构好
+</code></pre><p>4、 朴素的模式匹配算法</p>
+<p>5、 KMP模式匹配算法</p>
+<p>7、 KMP模式匹配算法改进</p>
+<p><strong>练习</strong></p>
+<pre><code>《璇玑图》破解诗篇的算法
+</code></pre><h2 id="第六章-树"><a href="#第六章-树" class="headerlink" title="第六章 树"></a>第六章 树</h2><p>1、 树（Tree）是n（n&gt;=0）个结点的有限集。n=0时称为空树，在任意一棵非空树中</p>
+<pre><code>1） 有且仅有一个特定的称为根（root）的结点；
+2） 当n&gt;1时，其余结点可分为m（m&gt;0）个互不相交的有限集T_1,T_2,...、T_m,其中每一个集合本身又是一棵树，并且称为根的子树（SubTree）如图6-2-1 所示。
+</code></pre><p>2、 结点拥有的子树数称为结点的度（Degree）。度为0的结点称为叶结点（Leaf）或终端结点；度不为0的结点称为非终端结点的度的最大值</p>
+<p>3、 结点的子树的根称为该结点的孩子（child）相应地，该结点称为孩子的双亲</p>
+<p>4、 同一个双亲的孩子之间互称兄弟（sibling）结点的祖先是从根到该结点所经分支上的所有结点，以某结点为根的子树中的任一结点都称为该结点的子孙</p>
+<p>5、 结点的层次（level）从根开始定义起，根为第一层；根的孩子为第二层</p>
+<p>6、 双亲在同一层的结点互为堂兄弟</p>
+<p>7、 树中结点的最大层次称为树的深度（Depth）或高度</p>
+<p>8、如果将树中结点的各个子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树</p>
+<p>9、 森林（Forest）是m（m&gt;=0）棵互不相交的树的集合</p>
+<p>10、 双亲表示法：在每个结点中，附设一个指示器指示其双亲结点在树组中的位置</p>
+<p>11、 存储结构的设计是一个非常灵活的过程，一个存储结构设计得是否合理，取决于基于该存储结构的运算是否合适，是否方便，时间复杂度好不好等</p>
+<p>12、 每个结点有多个指针域；其中每个指针指向一颗子树的根结点，我们把这种方法叫做多重链表表示法</p>
+<p>13、孩子表示法：把每个结点的孩子结点排列起来，以单链表作存储结构，则n个结点有 n 个孩子链表，如果是叶子结点则次单链表为空，然后 n 个头指针又组成一个线性表，采用顺序存储结构，存放进一个一维中</p>
+<p>14、 孩子兄弟表示法： 任意一棵树，它的结点的第一个孩子如果存在就是唯一的，它的左兄弟如果存在也是唯一的，因此，我们设置两个指针，分别指向该结点的第一个孩子和此结点的右兄弟</p>
+<p>15、 二叉树（Binary Tree）是 n （n&gt;=0）个结点的有限集合，该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的，分别称为根结点的左子树和右子树的二叉树组成</p>
+<p>16、 二叉树五种形态</p>
+<pre><code>16.1 空二叉树
+16.2 只有一个根结点
+16.3 根结点只有左子树
+16.4 根结点只有右子树
+16.5 根结点既有左子树又有右子树
+</code></pre><p>17、 斜树：所有的结点都只有左子树的二叉树叫左斜树，所有结点都是只有右子树的二叉树叫右斜树</p>
+<p>18、 满二叉树： 在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。</p>
+<p>19、 完全二叉树： 对一棵具有 n 个结点的二叉树按层序编号，如果编号为i（1&lt;=i&lt;=n）的结点与同样深度的满二叉树中编号为i 的结点在二叉树中位置完全相同，则这棵二叉树称为完全二叉树</p>
+<p>20、 二叉树的性质</p>
+<pre><code>20.1 在二叉树的第 i 层中至多有2^i-1个结点（i&gt;=1）
+
+20.2 深度为k 的二叉树至多有（2^k）-1个结点（k&gt;=1）
+
+20.3 对任何一棵二叉树T，如果其终端结点数为 n_0,度为2的结点数为n_2;则 n_0=n_2+1
+
+20.4 具有 n 个结点的完全二叉树的深度为【log_2 n】+1(|x|表示不大于x的最大整数)
+
+20.5 如果对一棵有 n 个结点的完全二叉树（其深度为【log_2 n】+1）的结点按层序编号（从第1层到【log_2 n】+1层，每个层从左到右），对任一结点 i (i&lt;=i&lt;=n)有：
+    20.5.1 如果i=1，则其双亲是结点【i／2】
+    20.5.2 如果2*i&gt;n;则结点 i 无左孩子（结点 i 为叶子结点）；否则左孩子是结点2*i
+    20.5.3 如果2*i+1&gt;n,则结点 i 无右孩子，否则右孩子结点2*i+1
+</code></pre><p>21、 二叉树的顺序存储结构就是用一维数组存储二叉树中的结点，并且结点的存储位置，也就是数组的下标要能体现结点之间的逻辑关系，比如双亲与孩子的关系，左右兄弟的关系等</p>
+<p>22、 二叉链表： 二叉树每个结点最多有两个孩子，所以为它设计一个数据域和两个指针域，这样称的链表叫做二叉树</p>
+<p>23、 二叉树的遍历（traversing binary tree）是指从根结点出发，按照某种次序依次访问二叉树中所有结点使得每个结点被访问一次且仅被访问一次</p>
+<p>24、 前序遍历：规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树</p>
+<p>25、 中序遍历： 规则是若树为空，则空操作返回，否则从根结点开始（注意并不是先访问根结点），中序遍历根结点的左子树，然后是访问根结点最后中序遍历右子树</p>
+<p>26、 后序遍历： 树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点</p>
+<p>27、 层序遍历：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点，逐个访问</p>
+<p>28、 指向前驱荷后继的指针称为线索；加上线索的二叉树称为线索链表，相应地二叉树就称为线索二叉树（Threaded Binary Tree）</p>
+<pre><code>注： 如果所用的二叉树需经常遍历或查找结点时需要某种遍历序列中的前驱荷后继，那么采用线索二叉链表的存储结构就是非常不错的选择
+</code></pre><p>29、 赫夫曼树及其应用 –最基本压缩编码方法</p>
+<p>30、 设需要编码的字符集为{d_1,d_2,…,d_n} 各个字符在电文中出现的次数或频率集合为{w_1,w_2,…,w_n} 以d_1,d_2,…,d_n作为叶子结点，以w_1,w_2,…,w_n 作为相应叶子结点的权值来构造一棵赫夫曼树，规定赫夫曼树的左分支代表O，右分支代表1，则从根结点到叶子结点所经过的路径分支组成的O和1的序列便为该结点对应字符的编码；这就是赫夫曼编码</p>
+<h2 id="第七章-图"><a href="#第七章-图" class="headerlink" title="第七章 图"></a>第七章 图</h2><p>1、 图（Graph）是由顶点的有穷非空集合和顶点之间的集合组成，通常表示为G（V，E），其中，G表示一个图，V是图，G中顶点的集合，E是图G中边的集合</p>
+<p>2、 有向边：若从顶点V_i 到V_j的边有方向，则称这条边为有向边，也称为弧（Arc）</p>
+<p>3、 在图中，若不存在顶点到其自身的边，且同一条边不重复出现，则称这样的图为简单的图</p>
+<p>4、 在无向图中，如果任意两个顶点之间都存在边，则称该图为无向完全图</p>
+<p>5、 有很少边或弧的图称为稀疏图，反之称为稠密图</p>
+<p>6、 路径的长度是路径上的边或弧的数目。第一个顶点到最后一个顶点相同的路径称为回路或环。序列中顶点不重复出现的路径称为简单路径。除了第一个顶点最后一个顶点之外，其余顶点不重复出现回路称为简单回路</p>
+<p>7、 在无向图G中，如果从顶点V到V1有路径，则称V和V1是连通的。如果对于图中任意两个顶点V_i,Vj属于V，Vi和Vj是连通的，则称G是连通图（Connected Graph）</p>
+<p>8、 无向图中的极大连通子图称为连通分量</p>
+<p>9、 在有向量图G中，如果对于每一对Vi，Vj属于V，Vi不等于Vj从Vi到Vj 和从Vj到Vi都存在路径，则称G是强连通图，有向图中的极大强连通子图称做有向图的强连通分量</p>
+<p>10、 图的邻接矩阵（Adjacency Matrix）存储方式，是用两个数组来表示图，一个一维数组存储图中顶点信息，一个二维数组（称为邻接矩阵）存储图中的边或弧的信息</p>
+<p>11、 邻接表：数组与链表相结合的存储方法称为邻接表</p>
+<p>12、 十子链表：能把邻接表与逆邻接表结合起来</p>
+<p>13、 ivex和jvex 是与某条边依附的两个顶点在顶点表中的下标，ilink 指向依附顶点ivex的下一条边，jlink 指向依附顶点jvex的下一条边。这就是邻接多重表结构</p>
+<p>14、 边集数组：是由两个一维数组构成。一个是存储顶点的信息，另一个是存储边的信息。这个边数组每个数据元素由一条边的起点下标（begin），终点下标（end）和权（weight）组成</p>
+<p>15、 深度优先遍历：也就称为深度优先搜索，简称为DFS</p>
+<p>16、 广度优先遍历：又称为广度优先搜索，简称BFS</p>
+<p>17、 我们把构造连通网的最少代价生成树称为最小生成树</p>
+<p>18、 普里姆算法</p>
+<p>19、 克鲁斯卡贝算法</p>
+<p>20、 最短路径 对于网图来说：最短路径：是指两顶点之间经过的边上权值之和最少的路径，并且我们称路经上的第一个顶点是源点，最后一个顶点是终点</p>
+<p>21、 迪杰斯特拉算法</p>
+<p>22、弗洛伊德算法： 如果你面临需要所有顶点至所有顶点的最短路径问题时，弗洛伊德算法应该是不错的选择</p>
+<p>23、 拓扑排序：在一个表示工程的有向图中，用顶点表示活动用弧表示活动之间的优先关系，这样的有向图为顶点表示活动的网，我们称为AOV网（Activing On Vertex Network）<br>    拓扑排序：其实就是对一个有向图构造拓扑序排的过程</p>
+<p>24、 关键路径：路径上各个活动所持续的时间之和称为路径长度，从源点到汇点具有最大长度的路径叫关键路径，在关键路径上的活动叫关键活动</p>
+<h2 id="第八章-查找"><a href="#第八章-查找" class="headerlink" title="第八章 查找"></a>第八章 查找</h2><p>1、 查找表（Search Table） 是由同一类型的数据元素（或记录）构成的集合</p>
+<p>2、 关键字（Key）是数据元素中某个数据项的值</p>
+<p>3、 查找（Searching）就是根据给定某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）</p>
+<p>4、 静态查找表（Static Search Table）：只作查找操作的查找表</p>
+<p>5、 动态查找表（Dynamic Search Table）：在查找过程中同时插入查找表中不存在的数据元素，或者从表中删除已经存在的某个数据元素</p>
+<p>6、 顺序查找（Sequential Search）：又叫线性查找，是最基本的查找技术，它的查找过程是：从表中第一个（或最后一个）记录开始，逐个进行记录的关键字和给定值比较，若某个记录的关键字和给定值相等，则查找成功，找到所查的记录；如果直到最后一个（或第一个）记录，其关键字和给定值比较都不等时，则表中没有所查的记录，查找不成功</p>
+<p>7、 折半查找（Binary Search） 时间复杂度（O_log n）</p>
+<p>8、 插值查找（Interpolation Search）是根据要查找的关键字key 与 查找表中最大最小记录的关键字比较后的查找方法，其核心就在于插值的计算公式</p>
+<pre><code>    key-a【low】
+-------------------
+    a【high】-a【low】
+</code></pre><p>9、 <strong>斐波那契查找</strong></p>
+<p>10、 折半查找是进行加法与除法运算 mid=（low + high）／2），插值查找进行复杂的四则运算<br>    （mid=low + （high-low））*（key-a【low】）／（a【high】-a【low】），<br>    而斐波那契查找只是最简单加减法运算（mid=low+F【k-1】-1），在海量数据的查找过程中，这种细微的差别可能会影响最终的查找效率</p>
+<p>11、 索引就是把一个关键字与它对应的记录相关联的过程</p>
+<p>12、 索引按照结构可以分为线性索引、树型索引和多级索引</p>
+<p>13、 线性索引就是将索引项集合组织为线性结构也称为索引表</p>
+<p>14、 稠密索引：将数据集中的每个记录对应一个索引项</p>
+<pre><code>注：对于稠密索引这个索引来说，索引项一定是按照关键码有序的排列
+</code></pre><p>15、 分块索引： 是把数据集的记录分成了若干块，并且这些块需要满足两个条件</p>
+<pre><code>15.1 块内无序 即每一块内的记录不要求有序
+
+15.2 块间有序
+
+15.3 最大关键码： 它存储每一块中的最大关键字，这样的好处就是可以使得在它之后的下一块中的最小关键字也能比这一块最大的关键字要大
+
+15.4 存储了块中的记录个数，以便于循环时使用
+
+15.5 用于指向块首数据元素的指针，便于开始对这一块中记录进行遍历
+</code></pre><p>16、 倒排索引</p>
+<p>17、 其中记录号表存储具有相同次关键字的所有记录号（可以是指向记录的指针或者是该记录的主关键字），这样的索引方法就是倒排索引（inverted index）</p>
+<p>18、 二叉排列树（Binary Sort Tree）又称为二叉查找树，它或者是一棵空树，或者是具有下列性质的二叉树</p>
+<pre><code>18.1 若它的左子树不空，则左子树上所有结点的值均小于它的根结构的值
+
+18.2 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值
+
+18.3 它的左右子树也分别为二叉排列树
+</code></pre><p>19、 二叉排序树插入操作</p>
+<p>20、 平衡二叉树（Self-Balancing Binary Search Tree 或Height-Balanced Binary Search Tree）是一种二叉树，其中一个节点的左子树和右子树的高度差至多等于1</p>
+<p>21、 将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF（Balance Factor）</p>
+<pre><code>注：距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树，称为最小不平衡子树
+</code></pre><p>22、 多路查找树（muitl - way Search tree） 其每一个结点的孩子树可以多于两个，且每一个结点处可以存储对过元素</p>
+<p>23、 2-3树：是这样一棵多路查找树：其中的每一个结点都具有两个孩子（我们称它为2结点）或三个孩子（我们称它为 3 结点）<br>    23.1 一个2 结点包含一个元素和两个孩子，一个3 结点包含一小一大两个元素和三个孩子</p>
+<p>24、 2-3-4树：就是2-3树的概念扩展，包括了4结点的使用，一个4结点包含小、中大三个元素和四个孩子（或没有孩子）</p>
+<p>25、 B树（B-tree）是一种平衡的多路查找树</p>
+<p>26、 B+树的结构特别适合带有范围的查找，比如查找我们学校18～22岁的学生人数</p>
+<p>27、 散列技术是在记录的存储位置和它的关键字之间建立一个确定的对应关系f，使得每个关键字key对应一个存储位置f（key）</p>
+<pre><code>注：这种对应关系f称为散列函数，又称为哈希（Hash）函数，按这个思想采用散列技术将记录存储在一块连续的存储空间中，这块连续存储空间称为散列表或哈希表（Hash table）
+</code></pre><p>28、 散列技术既是一种存储方法，也是一种查找方法</p>
+<p>29、 散列技术最适合的求解问题是查找与给定值相等的记录</p>
+<p>30、 散列函数因素参与：</p>
+<pre><code>30.1 计算散列地址所需的时间
+
+30.2 关键字的长度
+
+30.3 散列表的大小
+
+30.4 关键字的分布情况
+
+30.5 记录查找的频率，综合这些因素
+</code></pre><p>31、 开放定址法： 一旦发生了冲突；就去寻找下一个空的散列地址，只要散列表足够大，空的散列地址总能找到，并将记录存入</p>
+<pre><code>f（key）=（f（key）+d_i）MODm(d_i=1,2,3,..,m-1)
+</code></pre><p>解决冲突的开放地址法称为线性探测法增加平方运算的目的是为了不让关键字都聚集在某一块区域我们称这种方法为二次探测法</p>
+<pre><code>f_i(key)=(f(key)+d_i)MOD m (d_i=1^2,-1^2,2^2,-2^2,...,q^2,-q^2) q&lt;=m/2
+</code></pre><p>在冲突时，对于移量d_i采用随机函数i+算得到，我们称之为随机探测法 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/17/book-2-clean-code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/17/book-2-clean-code/" itemprop="url">《代码整洁之道》</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T05:17:03+08:00">
+                2017-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://omnk3xsvf.bkt.clouddn.com/timg.jpeg" alt="Alt text"></p>
+<pre><code>无规矩不成方圆；书写代码就像写作一样。要有一定的书写方式方法才能写出让人一目了然的好代码。
+最后升华到犹如艺术的境界
+</code></pre><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>举例说明什么是糟糕的、混乱的代码；什么是整洁的代码；介绍多位大牛对代码的思想；</p>
+<p>童子军军规“<strong>让营地比你来时更干净</strong>”</p>
+<h3 id="第二章-有意义的命名"><a href="#第二章-有意义的命名" class="headerlink" title="第二章 有意义的命名"></a>第二章 有意义的命名</h3><p>给变量、函数、参数、类、和包等命名。</p>
+<p>名副其实；避免误导；做有意义的区分；使用读的出来的名称；使用可搜索的名称；避免使用编码；</p>
+<p>匈牙利语标记法；无前缀；</p>
+<p>接口和实现IShapFactory–&gt;ShapFactoryImp</p>
+<p>避免思维映射“<strong>明确是王道</strong>”，循环计数不要用“l”</p>
+<p>类名和对象名应该是名词或名词短语</p>
+<p>方法名应当是动词或动词短语；别耍宝；别用双关词；使用解决方案领域名称</p>
+<p>添加有意义的语镜；</p>
+<h3 id="第三章-函数"><a href="#第三章-函数" class="headerlink" title="第三章 函数"></a>第三章 函数</h3><p>短小；只做一件事；</p>
+<p>每个函数一个抽象层级</p>
+<p>switch语句（<strong>只出现一次，用于创建多态对象，且隐藏在某个继承关系中，系统其他部分看不到</strong>）</p>
+<p><strong>使用异常替代返回错误码</strong></p>
+<p><strong>抽离Tty／Catch代码块</strong></p>
+<p>错误处理就是一件事</p>
+<p>别重复自己；结构化编程；如何写出这样的函数</p>
+<h3 id="第四章-注释"><a href="#第四章-注释" class="headerlink" title="第四章 注释"></a>第四章 注释</h3><p>喃喃自语；废话注释；注释掉的代码；</p>
+<h3 id="第五章-格式"><a href="#第五章-格式" class="headerlink" title="第五章 格式"></a>第五章 格式</h3><p>向报纸学习；概念间垂直方向上的区隔</p>
+<p>团队规则；</p>
+<h3 id="第六章-对象和数据结构"><a href="#第六章-对象和数据结构" class="headerlink" title="第六章 对象和数据结构"></a>第六章 对象和数据结构</h3><p>The Law of Demeter 对象隐藏数据，曝露操作</p>
+<h3 id="第七章-错误处理"><a href="#第七章-错误处理" class="headerlink" title="第七章 错误处理"></a>第七章 错误处理</h3><p>使用异常而非返回码；使用不可控异常；依调用者需要定义异常类；定义常规流程；</p>
+<p><strong>别返回null</strong>；<strong>别传递null</strong></p>
+<h3 id="第八章-边界"><a href="#第八章-边界" class="headerlink" title="第八章 边界"></a>第八章 边界</h3><p><strong>学习性测试</strong>；学习log4j；</p>
+<h3 id="第九章-单元测试"><a href="#第九章-单元测试" class="headerlink" title="第九章 单元测试"></a>第九章 单元测试</h3><p>TDD三定律；保持测试整洁；测试和代码一样重要；</p>
+<p>每个测试一个断言；</p>
+<p>F（快速fast）I（独立independ）R（repeatable可重复）S（自足验证Self-Validating）T（Timely及时）</p>
+<h3 id="第十章-类"><a href="#第十章-类" class="headerlink" title="第十章 类"></a>第十章 类</h3><p>类的组织；类应该短小；为了修改而组织；</p>
+<h3 id="第十一章-系统"><a href="#第十一章-系统" class="headerlink" title="第十一章 系统"></a>第十一章 系统</h3><p>将系统构造与使用分开；纯Java AOP框架；</p>
+<h3 id="第十二章-迭进"><a href="#第十二章-迭进" class="headerlink" title="第十二章 迭进"></a>第十二章 迭进</h3><p>运行所有测试；重构；不可重复；尽可能少的类和方法</p>
+<h3 id="第十三章-并发编程（建立多个demo来理解）"><a href="#第十三章-并发编程（建立多个demo来理解）" class="headerlink" title="第十三章 并发编程（建立多个demo来理解）"></a>第十三章 并发编程（建立多个demo来理解）</h3><p>对象是过程的抽象，线程是调度的抽象</p>
+<p>并发防御原则；了解执行模型；</p>
+<h3 id="第十五章-JUnit内幕"><a href="#第十五章-JUnit内幕" class="headerlink" title="第十五章 JUnit内幕"></a>第十五章 JUnit内幕</h3><h3 id="第十七章-味道与启发"><a href="#第十七章-味道与启发" class="headerlink" title="第十七章 味道与启发"></a>第十七章 味道与启发</h3><p>注释；环境；函数；重复；晦涩的意图；</p>
+<p>用多态替代If/else或者switch／case；避免否定性条件；</p>
+<p>避免传递浏览； </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/11/android-lichong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/11/android-lichong/" itemprop="url">简历--Android开发-李冲</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T20:11:01+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Android开发-李冲"><a href="#Android开发-李冲" class="headerlink" title="Android开发-李冲"></a>Android开发-李冲</h1><blockquote>
+<h3 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h3></blockquote>
+<p><strong>姓 名：李冲</strong>                                                 </p>
+<p>邮  箱：<em>lichongmac@163.com</em></p>
+<p>学 历：本科</p>
+<p>专 业：计算机科学与技术</p>
+<p>GitHub：<em><a href="https://lichong951.github.io/">https://lichong951.github.io/</a></em></p>
+<blockquote>
+<h3 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h3></blockquote>
+<pre><code>有UI测试框架espresso、uiautomator、junit实战经历，具有一定的项目、组件、业务重构能力；
+
+熟悉JVM虚拟机系统结构和内存机制，插件化和热修复技术；
+
+有JNI/C开发相关经验；
+
+熟练Java编程、⺴络编程、多线程编程、进程间通信和常⽤开源框架等；
+
+具有较强的学习能⼒和主动性，具有良好的沟通能⼒和团队合作精神
+
+jenkins实战经历从环境搭建、项目构建、打包、UI测试、monkey测试、发布、上线进行一站式解决
+
+对Adnroid下的架构设计，并行开发，网络管理，内存管理，消息通讯机制，安全机制有自己的深入体会和读到见解
+</code></pre><blockquote>
+<h3 id="工作及项目经历"><a href="#工作及项目经历" class="headerlink" title="工作及项目经历"></a>工作及项目经历</h3></blockquote>
+<h2 id="亮风台信息科技有限公司"><a href="#亮风台信息科技有限公司" class="headerlink" title="亮风台信息科技有限公司"></a>亮风台信息科技有限公司</h2><p><img src="http://omnk3xsvf.bkt.clouddn.com/hiscene_logo.jpg" alt="Alt text"><br>2017/05–至今</p>
+<p><strong>项目：汽车之家AR SDK开发</strong></p>
+<p><strong>简介：</strong><br><img src="http://omnk3xsvf.bkt.clouddn.com/hiscene_autohome.jpg" alt="Alt text"><br><img src="http://omnk3xsvf.bkt.clouddn.com/autohome2.png" alt="Alt text"><br><img src="http://omnk3xsvf.bkt.clouddn.com/autohome1.png" alt="Alt text"></p>
+<h2 id="北京萝卜科技有限公司"><a href="#北京萝卜科技有限公司" class="headerlink" title="北京萝卜科技有限公司"></a>北京萝卜科技有限公司</h2><p><img src="http://omnk3xsvf.bkt.clouddn.com/luobotec_logo.jpg" alt="Alt text"></p>
+<p>2015/06–2017/03  (现已搬到深圳办公)</p>
+<p><strong>项目：小萝卜伙伴机器人</strong></p>
+<p><strong>简介：</strong></p>
+<pre><code>一个童年 一个机器人陪伴，是送给孩子最好的礼物，小萝卜大功能：情感成长、陪玩耍、记忆成长、陪聊天、陪学习、智慧成长等。
+
+陪玩耍：小萝卜伙伴机器人的动作有8个自由度、灵活智能。可以像赛道一样奔跑，可以翩翩起舞，可以跳小苹果。
+
+陪学习：实现多维度的早教方式，提供进阶式学习内容，满足不同年龄阶段小孩的启蒙教育。
+
+陪聊天：具备准确的语音识别，强大的语义分析，可以流畅对话。内置英语词典。
+
+智慧成长：通过云平台，持续更新服务内容
+
+记忆成长：记录孩子的语言资料，图像资料、视频资料，是童年的记录者
+
+情感成长：了解孩子的行为习惯，逐渐产生感性反馈习惯
+</code></pre><p><strong>项目整体结构：</strong>外设硬件+android系统+手机App+后台云服务</p>
+<p><strong>职责：</strong>主要是android端（即机器人端）功能</p>
+<pre><code>1、用户功能：唱歌、跳舞、讲故事、对话等语音交互，涉及语音识别、语义理解、定制语音合成音播放
+
+2、外设部分：协商通信协议完成眼睛闪烁、手臂、轮子等硬件的运动控制
+
+3、手机APP部分：App通过蓝牙连接机器人，app发出指令完成跳舞、讲故事、编程等功能。协商制定通信协议
+
+4、协商制定机器人端每个阶段的开发细则任务，担任机器人端的开发组leader角色
+
+5、对接第三方技术集成（android系统定制；语音技术提供；语义理解；语音合成；行为统计）
+
+6、重构抽取业务层快速交付第三方机器人的定制开发（如：浦发银行小浦、海淀安全馆安全大使））
+
+7、技术面试应聘的Android开发工程师，组建Android开发团队
+
+8、对外提供技术支持服务，对公司的工厂提供android技术支持促进机器人量产
+</code></pre><p>小萝卜展出留影</p>
+<p><img src="http://omnk3xsvf.bkt.clouddn.com/8af2f0c5a8fde293cbc8f82b7a074fa9.jpg" alt="Alt text"></p>
+<h2 id="车讯互联"><a href="#车讯互联" class="headerlink" title="车讯互联"></a>车讯互联</h2><p><img src="http://omnk3xsvf.bkt.clouddn.com/chexun_logo.png" alt="Alt text"></p>
+<p>2012/05–2015/06 （清华科技园办公）</p>
+<p><strong>项目：买车通</strong></p>
+<p><strong>简介：</strong></p>
+<pre><code>《买车通》助你轻松买到好车；买车通是车讯专为购车用户精心打造的一款看车、比车、询价等功能齐全的移动App
+
+    全新的用户体验：界面交互全面升级，买车更迅捷
+
+    流畅的UI设计：各种车型图片车内装饰，还有性感动人的车模MM相伴，如此香车美人
+
+    价格优惠 一看便知：各大城市4s店的最新车型，车款、价格优惠详情等一目了然
+
+    购车计算：内置各大城市的购车计算方式，裸车价、购置税、车船使用税等计算方式和花费项目。
+
+    拆车坊：《拆车坊》节目视频播放。
+</code></pre><p><strong>职责：</strong></p>
+<pre><code>1、刚开始独立开发，后来随着业务扩展；进行技术面试把关组建android技术团队
+
+2、按产品需求制定app开发计划时间表；拆分需求制定app版本迭代计划
+
+3、按市场营销活动计划，制定相应的营销功能
+
+4、统计分析购车客户的使用习惯，迭代交互设计方案
+
+5、统计分析图片浏览习惯，提供更多客户浏览量高的相关香车图片
+
+6、统计分析使用app的分布情况，定期给市场以及其他部门提供数据报告，提高了4s广告的精准投放
+
+7、解析竞争app的技术、使用习惯、UI迭代趋势、内容质量、用户粘性等，提供详尽的竟品报告
+
+8、常规的性能优化、UI适配、分辨率适配、机型适配、省电策略以及android技术解决方案等
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/05/debug-androidstudio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/05/debug-androidstudio/" itemprop="url">Android Studio使用异常记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-05T10:51:52+08:00">
+                2017-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1、Android-Studio-Build-Error-This-version-of-Android-Studio-is-incompatible-with-the-Gradle-Plugin-used-Try-disabling-Instant-Run"><a href="#1、Android-Studio-Build-Error-This-version-of-Android-Studio-is-incompatible-with-the-Gradle-Plugin-used-Try-disabling-Instant-Run" class="headerlink" title="1、Android Studio Build Error : This version of Android Studio is incompatible with the Gradle Plugin used. Try disabling Instant Run"></a>1、Android Studio Build Error : This version of Android Studio is incompatible with the Gradle Plugin used. Try disabling Instant Run</h2><p>异常原因：android studio升级后不能编译通过并报此异常</p>
+<p>解决办法：先clean project 如何rebuild project 即可解决。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/03/debug-history/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/03/debug-history/" itemprop="url">hexo异常记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T16:32:48+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1、generateError-生成静态页面异常"><a href="#1、generateError-生成静态页面异常" class="headerlink" title="1、generateError 生成静态页面异常"></a>1、generateError 生成静态页面异常</h2><pre><code>lc git:(master) ✗ hexo generate
+INFO  Start processing
+ERROR Process failed: _posts/book-1.md
+Error
+    at generateError (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:162:10)
+    at throwError (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:168:9)
+    at readBlockMapping (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:1045:9)
+    at composeNode (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:1331:12)
+    at readDocument (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:1493:3)
+    at loadDocuments (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:1549:5)
+    at Object.load (/Users/smart/hexo/lc/node_modules/js-yaml/lib/js-yaml/loader.js:1566:19)
+    at parseYAML (/Users/smart/hexo/lc/node_modules/hexo-front-matter/lib/front_matter.js:80:21)
+    at parse (/Users/smart/hexo/lc/node_modules/hexo-front-matter/lib/front_matter.js:56:12)
+    at /Users/smart/hexo/lc/node_modules/hexo/lib/plugins/processor/post.js:52:18
+    at tryCatcher (/Users/smart/hexo/lc/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:507:35)
+    at Promise._settlePromise (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:691:18)
+    at Promise._fulfill (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:636:18)
+    at PromiseArray._resolve (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise_array.js:125:19)
+    at PromiseArray._promiseFulfilled (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise_array.js:143:14)
+    at PromiseArray._iterate (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise_array.js:113:31)
+    at PromiseArray.init [as _init] (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise_array.js:77:10)
+    at Promise._settlePromise (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:564:21)
+    at Promise._settlePromise0 (/Users/smart/hexo/lc/node_modules/bluebird/js/release/promise.js:612:10)
+INFO  Files loaded in 252 ms
+</code></pre><p>异常原因：在文章tag：冒号后面少了一个空格<br>解决：加一个空格即修复异常</p>
+<h2 id="2、hexo-cannot-get-tags"><a href="#2、hexo-cannot-get-tags" class="headerlink" title="2、hexo cannot get tags"></a>2、hexo cannot get tags</h2><p>参考：<a href="https://www.zhihu.com/question/29017171" target="_blank" rel="external">https://www.zhihu.com/question/29017171</a></p>
+<pre><code>1.    hexo new page &quot;tags&quot;
+2. 如果有评论：
+    type: &quot;tags&quot;
+    comments: false
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/03/book-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/03/book-1/" itemprop="url">《大数据与商业模式变革》</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T16:11:01+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>从信息到知识，再到利润<br>（法）Bernard Liautaud<br>（美）Mark Hammond</p>
+<p>  传统行业的发展壮大是沿袭历史的规律，前人的经验来控制企业这个船的航行方向。属于发现、验错、请教导师、再验错、再请教导师、再次吸取前辈们经验。这个过程解决从0到1是比较合理的。但是当企业已经是一艘航空母舰，行业的领跑者或者是行业的标杆。那么发展的行驶方向又该如何决策。</p>
+<p>  本书讲述了大数据、智能、企业商务智能等术语名词。简单易懂的阐明企业、数据、企业电子商务智能的设计理念以及企业电子商务所服务的对象。试着解决大数据投入成本、规模控制、产出的方式以及最后获利的方式的普适性。过程犹如编程（构造解决方案、执行、进行数据验证、再调试、达到目标）。沿着数据的脉络可以发现部分经验的产生结果和预期是一致的，而有些部分则完全相反或者毫无关系。如果这些经验刚好是用来指导企业的决策方向那么就显得格外重要；经验作为方向，数据作为依据，而数据的采集、归纳、报表设计信息的权限设计等则为大数据企业商务智能的由来</p>
+<p>  “客户更换供应商成本可以忽略不计”</p>
+<p>  “增强客户的满意度，增强服务的竞争力，帮助客户节约成本、节约时间”</p>
+<p>“企业经营不可预测成为历史”</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/02/03/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/03/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-03T17:05:24+08:00">
+                2017-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -100,88 +1875,316 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/03/hello-world/" data-id="ciypn4hnu0000vps6krdn6zub" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+  </section>
 
   
 
-</section>
+
+          </div>
+          
+
+
+          
+
+        </div>
         
-          <aside id="sidebar">
+          
   
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-
-  
+  <aside id="sidebar" class="sidebar">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/02/03/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    <div class="sidebar-inner">
 
-  
-</aside>
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">lichong</p>
+              <p class="site-description motion-element" itemprop="description">读书笔记；移动开发；node.js</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichong</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 lichong<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

@@ -231,6 +231,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2018/05/13/【Jenkins】构建后生成下载二维码并邮件通知/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/【Jenkins】构建后生成下载二维码并邮件通知/" itemprop="url">【Jenkins】构建后生成下载二维码并邮件通知</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T15:18:25+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="二维码生成配置"><a href="#二维码生成配置" class="headerlink" title="二维码生成配置"></a>二维码生成配置</h3><h4 id="http-server-MAC"><a href="#http-server-MAC" class="headerlink" title="http-server(MAC)"></a>http-server(MAC)</h4><p>检测 node -v、npm -v 然后安装http-server</p>
+<pre><code>npm install http-server -g
+</code></pre><p>启动服务“http-server -p 8000” 设置端口为8000.避免jenkins端口冲突<br>在/Users/XXX/Public 目录下面建立jenkins目录，把构建后的apk复制到/Users/XXX/Public/jenkins/apk/目录下面<br>然后把二维码图片也复制到/Users/XXX/Public/jenkins</p>
+<blockquote>
+<p>为什么要http-server服务</p>
+</blockquote>
+<p>因为在jenkins里的图片在邮件里是没有办法直接显示的。必须要有一个没有拦截的访问路径。以避开jenkins的用户验证。同理apk的下载也是如此<br>不过一般都是部署在局域网内。安全性还是有保障的。如果要发布到外网的可以使用第三方服务上传apk包生成公网下载二维码。</p>
+<h4 id="安装pip（MAC）（python-gt-3-1）-如果版本不够看”其他“"><a href="#安装pip（MAC）（python-gt-3-1）-如果版本不够看”其他“" class="headerlink" title="安装pip（MAC）（python&gt;3.1）[如果版本不够看”其他“]"></a>安装pip（MAC）（python&gt;3.1）[如果版本不够看”其他“]</h4><pre><code>sudo easy_install pip
+</code></pre><p><a href="https://jingyan.baidu.com/article/ca2d939d6299eaeb6c31cee2.html" target="_blank" rel="external">mac下安装pip</a></p>
+<p><a href="http://www.cnblogs.com/yuanzm/p/4089856.html" target="_blank" rel="external">windows下面安装Python和pip终极教程</a></p>
+<h4 id="安装myqr"><a href="#安装myqr" class="headerlink" title="安装myqr"></a>安装myqr</h4><pre><code>命令1：pip install Pillow （失败）
+命令2：pip install -I --no-cache-dir -v Pillow （成功）
+至于为什么失败，解释颇多也不想深究。暂且都记上多试试。
+安装qrcode 命令：pip install myqr
+</code></pre><p>生成二维码命令<br>    myqr <a href="http://localhost:8000/jenkins/apk/XXXX.apk" target="_blank" rel="external">http://localhost:8000/jenkins/apk/XXXX.apk</a> -n jenkins-qrcode-${JOB_NAME}.png -v 1 -l L -d /Users/XXX/Public/jenkins</p>
+<h3 id="Jenkins邮件通知配置"><a href="#Jenkins邮件通知配置" class="headerlink" title="Jenkins邮件通知配置"></a>Jenkins邮件通知配置</h3><p>在邮件配置content字段里添加</p>
+<pre><code>&lt;img src=&quot;http://localhost:8000/jenkins/jenkins-qrcode-${JOB_NAME}.png &quot; width=&quot;200px&quot; height=&quot;200px&quot; /&gt;&lt;/br&gt;&lt;/hr&gt;
+&lt;a href=&apos;http://localhost:8000/jenkins/apk/XXXX.apk&apos;&gt;点击下载apk&lt;/a&gt;
+</code></pre><p>邮件通知配置样例<br>    <hr></p>
+<pre><code>(本邮件是程序自动下发的，请勿回复！)&lt;br/&gt;&lt;hr/&gt;
+
+项目名称：$PROJECT_NAME&lt;br/&gt;&lt;hr/&gt;
+
+构建编号：$BUILD_NUMBER&lt;br/&gt;&lt;hr/&gt;
+
+构建状态：$BUILD_STATUS&lt;br/&gt;&lt;hr/&gt;
+
+触发原因：${CAUSE}&lt;br/&gt;&lt;hr/&gt;
+
+扫描二维码下载&lt;img src=&quot;http://192.168.10.214:8000/JenkinsApk/jenkins-qrcode-${JOB_NAME}.png&quot; width=&quot;200px&quot; height=&quot;200px&quot;/&gt; &lt;br/&gt;&lt;hr/&gt;
+&lt;a href=&quot;http://192.168.10.214:8000/JenkinsApk/apk/${JOB_NAME}-Debug-${BUILD_NUMBER}.apk&quot;&gt;点击下载${JOB_NAME}-Debug-${BUILD_NUMBER}.apk&lt;/a&gt;&lt;br/&gt;&lt;hr/&gt;
+构建日志地址：&lt;a href=&quot;${BUILD_URL}console&quot;&gt;${BUILD_URL}console&lt;/a&gt;&lt;br/&gt;&lt;hr/&gt;
+
+构建地址：&lt;a href=&quot;$BUILD_URL&quot;&gt;$BUILD_URL&lt;/a&gt;&lt;br/&gt;&lt;hr/&gt;
+
+变更集:${JELLY_SCRIPT,template=&quot;html&quot;}&lt;br/&gt;&lt;hr/&gt;
+</code></pre><p>参考：<br><a href="https://www.jianshu.com/p/915c1ae69144" target="_blank" rel="external">https://www.jianshu.com/p/915c1ae69144</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>【MAC】</p>
+<blockquote>
+<p>“OSError: [Errno 13] Permission denied: ‘/Library/Python/2.7/site-packages/PIL’”</p>
+</blockquote>
+<p><strong>使用 sudo pip install -I –no-cache-dir -v Pillow 命令安装</strong></p>
+<blockquote>
+<p>mac OSError: [Errno 1] Operation not permitted: ‘/tmp/pip-ZaNR4Q-uninstall/System/Library/Frameworks</p>
+</blockquote>
+<p>升级python 版本</p>
+<pre><code>$ pip install --upgrade pip
+$ sudo pip install numpy --upgrade --ignore-installed
+$ sudo pip install scipy --upgrade --ignore-installed
+$ sudo pip install scikit-learn --upgrade --ignore-installed
+</code></pre><p>参考<a href="https://www.jianshu.com/p/7a18c78b5982" target="_blank" rel="external">https://www.jianshu.com/p/7a18c78b5982</a></p>
+<blockquote>
+<p>OSError: [Errno 13] Permission denied: ‘/Library/Python/2.7/site-packages/imageio-2.3.0.dist-info’<br>解决方法：<br><strong>sudo pip install myqr</strong></p>
+<p>matplotlib 1.3.1 requires nose, which is not installed.<br>matplotlib 1.3.1 requires tornado, which is not installed.</p>
+</blockquote>
+<p>解决方法：运行sudo pip install matplotlib</p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><blockquote>
+<p>Email:lichongmac@163.com</p>
+</blockquote>
+<p>支付宝打赏：<a href="https://pan.baidu.com/s/1UMWjU1FHv7hYpdlcCQrJ3A" target="_blank" rel="external">https://pan.baidu.com/s/1UMWjU1FHv7hYpdlcCQrJ3A</a></p>
+<p>微信打赏：<a href="https://pan.baidu.com/s/1dSBXk3eFZu3mAMkw3xu9KQ" target="_blank" rel="external">https://pan.baidu.com/s/1dSBXk3eFZu3mAMkw3xu9KQ</a></p>
+<p>公众号推荐：</p>
+<p><img src="http://i2.51cto.com/images/blog/201805/11/0e2ece55187caabd7b246e9550a8d5a0.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2018/05/13/Jenkins01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -250,7 +432,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/13/Jenkins01/" itemprop="url">Jenkins01-构建触发器设置说明</a></h1>
+                <a class="post-title-link" href="/2018/05/13/Jenkins01/" itemprop="url">【Jenkins】自动构建配置</a></h1>
         
 
         <div class="post-meta">
@@ -1952,131 +2134,6 @@ INFO  Files loaded in 252 ms
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/03/book-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lichong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/03/book-1/" itemprop="url">《大数据与商业模式变革》</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T16:11:01+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>从信息到知识，再到利润<br>（法）Bernard Liautaud<br>（美）Mark Hammond</p>
-<p>  传统行业的发展壮大是沿袭历史的规律，前人的经验来控制企业这个船的航行方向。属于发现、验错、请教导师、再验错、再请教导师、再次吸取前辈们经验。这个过程解决从0到1是比较合理的。但是当企业已经是一艘航空母舰，行业的领跑者或者是行业的标杆。那么发展的行驶方向又该如何决策。</p>
-<p>  本书讲述了大数据、智能、企业商务智能等术语名词。简单易懂的阐明企业、数据、企业电子商务智能的设计理念以及企业电子商务所服务的对象。试着解决大数据投入成本、规模控制、产出的方式以及最后获利的方式的普适性。过程犹如编程（构造解决方案、执行、进行数据验证、再调试、达到目标）。沿着数据的脉络可以发现部分经验的产生结果和预期是一致的，而有些部分则完全相反或者毫无关系。如果这些经验刚好是用来指导企业的决策方向那么就显得格外重要；经验作为方向，数据作为依据，而数据的采集、归纳、报表设计信息的权限设计等则为大数据企业商务智能的由来</p>
-<p>  “客户更换供应商成本可以忽略不计”</p>
-<p>  “增强客户的满意度，增强服务的竞争力，帮助客户节约成本、节约时间”</p>
-<p>“企业经营不可预测成为历史”</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2127,7 +2184,7 @@ INFO  Files loaded in 252 ms
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2140,7 +2197,7 @@ INFO  Files loaded in 252 ms
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

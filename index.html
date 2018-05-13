@@ -231,6 +231,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2018/05/13/Jenkins01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/Jenkins01/" itemprop="url">Jenkins01-构建触发器设置说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T15:10:46+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="时间设置说明"><a href="#时间设置说明" class="headerlink" title="时间设置说明"></a>时间设置说明</h3><pre><code>* * * * *
+(五颗星，中间用空格隔开）
+第一颗*表示分钟，取值0~59
+第二颗*表示小时，取值0~23
+第三颗*表示一个月的第几天，取值1~31
+第四颗*表示第几月，取值1~12
+第五颗*表示一周中的第几天，取值0~7，其中0和7代表的都是周日
+</code></pre><p>例子如下：</p>
+<pre><code>每15分钟构建一次：H/15 * * * *   或*/5 * * * *
+每天8点构建一次：0 8 * * *
+每天8点~17点，两小时构建一次：0 8-17/2 * * *
+周一到周五，8点~17点，两小时构建一次：0 8-17/2 * * 1-5
+每月1号、15号各构建一次，除12月：H H 1,15 1-11 *
+*/5 * * * * （每5分钟检查一次源码变化）
+0 2 * * * （每天2:00 必须build一次源码）
+</code></pre><h3 id="触发远程构建-例如-使用脚本"><a href="#触发远程构建-例如-使用脚本" class="headerlink" title="触发远程构建 例如,使用脚本"></a>触发远程构建 例如,使用脚本</h3><h3 id="Build-after-other-projects-are-built"><a href="#Build-after-other-projects-are-built" class="headerlink" title="Build after other projects are built"></a>Build after other projects are built</h3><p>Projects to watch “XXXXX”</p>
+<pre><code>* Trigger only if build is stable：只有在构建稳定时才触发
+* 
+* Trigger even if the build is unstable：即使构建不稳定，也要触发
+* 
+* Trigger even if the build fails：即使构建失败，也要触发
+* 
+</code></pre><h3 id="Build-periodically"><a href="#Build-periodically" class="headerlink" title="Build periodically"></a>Build periodically</h3><p>周期性进行项目构建，这个是到指定的时间必须触发构建任务<br>比如我想在每天的9点，17点，朝九晚五各构建一次，在Build periodically里设置如下<br><img src="http://i2.51cto.com/images/blog/201803/26/9bafd3a8ed881183ce75f56363f54270.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+<h3 id="Build-when-a-change-is-pushed-to-GitLab-GitLab-CI-Service-URL-XXXXX"><a href="#Build-when-a-change-is-pushed-to-GitLab-GitLab-CI-Service-URL-XXXXX" class="headerlink" title="Build when a change is pushed to GitLab. GitLab CI Service URL: XXXXX"></a>Build when a change is pushed to GitLab. GitLab CI Service URL: XXXXX</h3><ul>
+<li>Enabled GitLab triggers    ：启用GitLab触发器</li>
+<li>Push Events：push 事件</li>
+<li>Opened Merge Request Events：打开合并请求事件</li>
+<li>Accepted Merge Request Events        ：接受合并请求事件</li>
+<li>Closed Merge Request Events        ：关闭合并请求事件</li>
+<li>Rebuild open Merge Requests        ：重建开放合并请求</li>
+<li>Comments        ：评论</li>
+<li>Comment for triggering a build：注释触发构建</li>
+</ul>
+<h3 id="GitHub-hook-trigger-for-GITScm-polling"><a href="#GitHub-hook-trigger-for-GITScm-polling" class="headerlink" title="GitHub hook trigger for GITScm polling"></a>GitHub hook trigger for GITScm polling</h3><p>GitHub钩子触发GITScm轮询</p>
+<h3 id="Poll-SCM"><a href="#Poll-SCM" class="headerlink" title="Poll SCM"></a>Poll SCM</h3><p>1.Poll SCM:定时检查源码变更（根据SCM软件的版本号），如果有更新就checkout最新code下来，然后执行构建动作</p>
+<p>2.如果我想每隔30分钟（H/30 <em> </em> <em> </em>）检查一次源码变化，有变化就执行</p>
+<p>Ignore post-commit hooks(可选项):忽略post-commit钩子</p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><blockquote>
+<p>Email:lichongmac@163.com</p>
+</blockquote>
+<p>支付宝打赏：<a href="https://pan.baidu.com/s/1UMWjU1FHv7hYpdlcCQrJ3A" target="_blank" rel="external">https://pan.baidu.com/s/1UMWjU1FHv7hYpdlcCQrJ3A</a></p>
+<p>微信打赏：<a href="https://pan.baidu.com/s/1dSBXk3eFZu3mAMkw3xu9KQ" target="_blank" rel="external">https://pan.baidu.com/s/1dSBXk3eFZu3mAMkw3xu9KQ</a></p>
+<p>公众号推荐：</p>
+<p><img src="http://i2.51cto.com/images/blog/201805/11/0e2ece55187caabd7b246e9550a8d5a0.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/11/18/unity3d-android-debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1333,7 +1496,7 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/03/11/android-lichong/" itemprop="url">简历--Android开发-李冲</a></h1>
+                <a class="post-title-link" href="/2017/03/11/android-lichong/" itemprop="url">简历-李冲</a></h1>
         
 
         <div class="post-meta">
@@ -1914,137 +2077,13 @@ INFO  Files loaded in 252 ms
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/02/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lichong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/03/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-03T17:05:24+08:00">
-                2017-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2088,7 +2127,7 @@ INFO  Files loaded in 252 ms
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2101,7 +2140,7 @@ INFO  Files loaded in 252 ms
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

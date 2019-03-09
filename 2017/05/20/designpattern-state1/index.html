@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java 设计模式 状态模式," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为
+何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。
+不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【设计模式】Java状态模式（1）">
+<meta property="og:url" content="https://lichong951.github.io/2017/05/20/designpattern-state1/index.html">
+<meta property="og:site_name" content="Lc">
+<meta property="og:description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为
+何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。
+不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta property="og:updated_time" content="2019-03-09T09:09:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【设计模式】Java状态模式（1）">
+<meta name="twitter:description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为
+何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。
+不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lichong951.github.io/2017/05/20/designpattern-state1/"/>
+
+
+
+
+
+  <title>【设计模式】Java状态模式（1） | Lc</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lc</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">lichong博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/05/20/designpattern-state1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【设计模式】Java状态模式（1）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T21:41:22+08:00">
+                2017-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为</p>
+<h2 id="何时使用状态模式"><a href="#何时使用状态模式" class="headerlink" title="何时使用状态模式"></a>何时使用状态模式</h2><p>State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。</p>
+<p>不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我们经常会在一个数据表的尾部，加上property属性含义的字段，用以标识记录中一些特殊性质的记录，这种属性的改变(切换)又是随时可能发生的，就有可能要使用State。</p>
+<p>在实际使用，类似开关一样的状态切换是很多的，但有时并不是那么明显，取决于你的经验和对系统的理解深度。</p>
+<p>这里要阐述的是”开关切换状态” 和” 一般的状态判断”是有一些区别的，” 一般的状态判断”也是有 if..elseif结构，例如：</p>
+<pre><code>if (which==1) state=&quot;hello&quot;;
+else if (which==2) state=&quot;hi&quot;;
+else if (which==3) state=&quot;bye&quot;;
+</code></pre><p>这是一个 “ 一般的状态判断”，state值的不同是根据which变量来决定的，which和state没有关系。如果改成：</p>
+<pre><code>if (state.euqals(&quot;bye&quot;)) state=&quot;hello&quot;;
+　else if (state.euqals(&quot;hello&quot;)) state=&quot;hi&quot;;
+　else if (state.euqals(&quot;hi&quot;)) state=&quot;bye&quot;;
+</code></pre><p>这就是 “开关切换状态”，是将state的状态从”hello”切换到”hi”，再切换到””bye”；在切换到”hello”，好象一个旋转开关，这种状态改变就可以使用State模式了。</p>
+<p>如果单纯有上面一种将”hello”–&gt;”hi”–&gt;”bye”–&gt;”hello”这一个方向切换，也不一定需要使用State模式，因为State模式会建立很多子类，复杂化，但是如果又发生另外一个行为：将上面的切换方向反过来切换，或者需要任意切换，就需要State了。</p>
+<p>请看下例：</p>
+<pre><code>public class Context{
+　　private Color state=null;
+　　public void push(){
+　　　　//如果当前red状态 就切换到blue
+　　　　if (state==Color.red) state=Color.blue;
+　　　　//如果当前blue状态 就切换到green
+　　　　else if (state==Color.blue) state=Color.green;
+　　　　//如果当前black状态 就切换到red
+　　　　else if (state==Color.black) state=Color.red;
+　　　　//如果当前green状态 就切换到black
+　　　　else if (state==Color.green) state=Color.black;
+　　　　Sample sample=new Sample(state);
+　　　　sample.operate();
+　　}
+　　public void pull(){
+　　　　//与push状态切换正好相反
+　　　　if (state==Color.green) state=Color.blue;
+　　　　else if (state==Color.black) state=Color.green;
+　　　　else if (state==Color.blue) state=Color.red;
+　　　　else if (state==Color.red) state=Color.black;
+　　　　Sample2 sample2=new Sample2(state);
+　　　　sample2.operate();
+　　}
+}
+</code></pre><p>在上例中，我们有两个动作push推和pull拉，这两个开关动作，改变了Context颜色，至此，我们就需要使用State模式优化它。</p>
+<p>另外注意：但就上例,state的变化，只是简单的颜色赋值，这个具体行为是很简单的，State适合巨大的具体行为，因此在,就本例，实际使用中也不一定非要使用State模式，这会增加子类的数目，简单的变复杂。</p>
+<p>例如：银行帐户，经常会在Open 状态和Close状态间转换。</p>
+<p>例如：经典的TcpConnection，Tcp的状态有创建 侦听 关闭三个，并且反复转换，其创建 侦听 关闭的具体行为不是简单一两句就能完成的，适合使用State。</p>
+<p>例如：信箱POP帐号，会有四种状态，start HaveUsername Authorized quit，每个状态对应的行为应该是比较大的，适合使用State。</p>
+<p>例如：在工具箱挑选不同工具，可以看成在不同工具中切换，适合使用State。如 具体绘图程序，用户可以选择不同工具绘制方框 直线 曲线，这种状态切换可以使用State。</p>
+<h2 id="如何使用状态模式"><a href="#如何使用状态模式" class="headerlink" title="如何使用状态模式"></a>如何使用状态模式</h2><p>State需要两种类型实体参与：<br>state manager 状态管理器，就是开关，如上面例子的Context实际就是一个state manager，在state manager中有对状态的切换动作。<br>用抽象类或接口实现的父类，不同状态就是继承这个父类的不同子类。<br>以上面的Context为例，我们要修改它，建立两个类型的实体。</p>
+<p>第一步，首先建立一个父类：</p>
+<pre><code>package top.lc951.state1;
+
+public abstract class  State {
+    public abstract void handlepush(Context c);
+    public abstract  void handlepull(Context c);
+    public abstract String getColor();
+
+}
+</code></pre><p>父类中的方法要对应state manager中的开关行为，在state manager中 本例就是Context中，有两个开关动作push推和pull拉.那么在状态父类中就要有具体处理这两个动作：handlepush() handlepull()；同时还需要一个获取push或pull结果的方法getcolor()。</p>
+<p>下面是具体子类的实现：</p>
+<pre><code>package top.lc951.state1;
+
+public class BlueState extends State {
+
+
+@Override
+public void handlepush(Context c) {
+    // TODO Auto-generated method stub
+    c.setState(new GreenState());
+
+}
+
+@Override
+public void handlepull(Context c) {
+    // TODO Auto-generated method stub
+    c.setState(new RedState());
+
+}
+
+@Override
+public String getColor() {
+    // TODO Auto-generated method stub
+    return &quot;blue&quot;;
+
+}
+</code></pre><p>}</p>
+<p>同样，其他状态的子类实现如blue一样。</p>
+<p>第二步，要重新改写State manager 也就是本例的Context</p>
+<pre><code>public class Context{
+　private Sate state=null; //我们将原来的 Color state 改成了新建的State state;
+　//setState是用来改变state的状态 使用setState实现状态的切换
+　pulic void setState(State state){
+　　　　this.state=state;
+　}
+　public void push(){
+　　//状态的切换的细节部分,在本例中是颜色的变化,已经封装在子类的handlepush中实现,这里无需关心
+　　state.handlepush(this);
+　　//因为sample要使用state中的一个切换结果,使用getColor()
+　　Sample sample=new Sample(state.getColor());
+　　sample.operate();
+　}
+　public void pull(){
+　　state.handlepull(this);
+　　Sample2 sample2=new Sample2(state.getColor());
+　　sample2.operate();
+　}
+}
+</code></pre><p>至此，我们也就实现了State的refactorying过程。</p>
+<h3 id="源码地址https-github-com-lichong951-designpattern-lichong951-git"><a href="#源码地址https-github-com-lichong951-designpattern-lichong951-git" class="headerlink" title="源码地址https://github.com/lichong951/designpattern-lichong951.git"></a>源码地址<a href="https://github.com/lichong951/designpattern-lichong951.git" target="_blank" rel="external">https://github.com/lichong951/designpattern-lichong951.git</a></h3><p>参考：<a href="http://www.cnblogs.com/Coda/p/4312281.html" target="_blank" rel="external">http://www.cnblogs.com/Coda/p/4312281.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-设计模式-状态模式/" rel="tag"># java 设计模式 状态模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/27/android-lichong/" rel="next" title="简历">
+                <i class="fa fa-chevron-left"></i> 简历
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/DataStructuresAndAlgorlthms/" rel="prev" title="数据结构和算法">
+                数据结构和算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">lichong</p>
+              <p class="site-description motion-element" itemprop="description">读书笔记；移动开发；node.js</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#何时使用状态模式"><span class="nav-number">1.</span> <span class="nav-text">何时使用状态模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用状态模式"><span class="nav-number">2.</span> <span class="nav-text">如何使用状态模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#源码地址https-github-com-lichong951-designpattern-lichong951-git"><span class="nav-number">2.1.</span> <span class="nav-text">源码地址https://github.com/lichong951/designpattern-lichong951.git</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

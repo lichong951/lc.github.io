@@ -95,7 +95,7 @@
 4、 数据项：一个数据元素可以由若干个数据项组成
 5、 数据项是数据不可分割的最小单位
 6、 数据对象：是性质相同的数据">
-<meta property="og:updated_time" content="2017-11-01T13:36:55.000Z">
+<meta property="og:updated_time" content="2019-03-09T09:09:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《大话数据结构》">
 <meta name="twitter:description" content="第一章一、名词解释1、 数据结构：是相互之间存在一种或多种特定关系的数据元素的集合
@@ -631,6 +631,27 @@
 </code></pre><p>解决冲突的开放地址法称为线性探测法增加平方运算的目的是为了不让关键字都聚集在某一块区域我们称这种方法为二次探测法</p>
 <pre><code>f_i(key)=(f(key)+d_i)MOD m (d_i=1^2,-1^2,2^2,-2^2,...,q^2,-q^2) q&lt;=m/2
 </code></pre><p>在冲突时，对于移量d_i采用随机函数i+算得到，我们称之为随机探测法 </p>
+<h2 id="第九章-排序"><a href="#第九章-排序" class="headerlink" title="第九章 排序"></a>第九章 排序</h2><p>1、 排序：假设含有n个记录的序列为{r_1,r_2,…,r_n},其相应的关键字分别为{k_1,k_2,…,k_n},需确定1，2，。。。n的一种排列p_1,p_2,…,p_n,使其相应的关键字满足k_p1&lt;=k_p2&lt;=···&lt;=k_pn非递减（或非递增）关系，即使序列成为一个按关键字有序的序列{r_p1,r_p2,…,r_pn},这样的操作就称为排序。</p>
+<p>2、 排序的稳定性：假设k_i=k_j(1&lt;=i&lt;=n,1&lt;=j&lt;=n,j!=j)且在排序前的序列中r_i;则称所用的排序方法是稳定；反之，若可能使得排序后的序列r_i领先r_2,则称所用的排序方法是不稳定的。</p>
+<p>3、 内排序与外排序：内排序是在整个排序过程中，待排序的所有记录全部被放置在内存中。<br>                    外排序是由于排序的记录个数太多，不能同时放置在内存，整个排序过程需要在内外存之间多次交换数据才能进行</p>
+<pre><code>3.1 时间性能
+3.2 辅助空间
+3.3 算法的复杂性
+</code></pre><p>4、 插入排序；交换排序；选择排序和归并排序</p>
+<p>5、 七种排序算法</p>
+<pre><code>5.1 简单算法：冒泡排序；简单选择排序；直接插入排序
+
+5.2 改进算法：希尔排序；堆排序；归并排序；快速排序
+</code></pre><p>6、 冒泡排序（Bubble Sort）一种交换排序，它的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止</p>
+<pre><code>6.1 冒泡排序优化，时间复杂度O（n^2）
+</code></pre><p>7、 简单选择排序算法（Simple selection Sort）就是通过n-i 次关键字间比较，从n-i+1记录中选出关键字最小的记录，并和第i（1&lt;=i&lt;=n）个记录交换之 时间复杂度O（n^2）</p>
+<p>8、 直接插入排序算法（Straight Insertion Sort）基本操作是将一个记录插入到已经排好序的有序表中，从而得到一个新的，记录数增1的有序表 时间复杂度O（n^2）</p>
+<p>9、 希尔排序</p>
+<p>10、 希尔排序原理：所谓的基本有序，就是小的关键字基本在前面，大的基本在后面，不大不小的基本在中间。将相距某个“增量”的记录组成一个子序列，这样才能保证在子序列内分别进行直接插入排序后得到的结果是基本有序而不是局部有序</p>
+<p>11、 堆：堆是具有下列性质的完全二叉树；每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值；称为小顶堆</p>
+<p>12、 堆排序（Heap Sort）：将待排序的序列构造成一个大顶堆。此时，整个序列的最大值就是堆顶的根结点。将它移走（其实就是将其与堆数组的末尾元素就是最大值），然后将剩余的n-1个序列重新构造成一个堆，这样就会得到n个元素中的次大值。如此反复执行，便能得到一个有序序列</p>
+<p>13、 归并算法（Merging Sort）：假设初始序列含有 n个记录，则可以看成是n个有序的子序列，每个子序列的长度为1，然后两两归并，得到【n/2】（【x】表示不小于x的最小整数）个长度为2或1的有序子序列，再两两归并，…如此重复，直至得到一个长度为n的有序序列为止，这种排序称为2路归并排序。<br>时间复杂度O（n+log n）</p>
+<p>14、 快速排序算法：通过一趟排序将待记录分割成独立的两个部分，其中一部分记录的关键字均比另一部分记录的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序的目的</p>
 
       
     </div>
@@ -750,7 +771,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -763,7 +784,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -798,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、名词解释"><span class="nav-number">1.1.</span> <span class="nav-text">一、名词解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-算法"><span class="nav-number">2.</span> <span class="nav-text">第二章 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-线性表"><span class="nav-number">3.</span> <span class="nav-text">第三章 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8、-静态链表：用数组描述的链表叫做静态链表"><span class="nav-number">3.1.</span> <span class="nav-text">8、 静态链表：用数组描述的链表叫做静态链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-线性表"><span class="nav-number">4.</span> <span class="nav-text">第四章 线性表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-串"><span class="nav-number">5.</span> <span class="nav-text">第五章 串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-树"><span class="nav-number">6.</span> <span class="nav-text">第六章 树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七章-图"><span class="nav-number">7.</span> <span class="nav-text">第七章 图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八章-查找"><span class="nav-number">8.</span> <span class="nav-text">第八章 查找</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、名词解释"><span class="nav-number">1.1.</span> <span class="nav-text">一、名词解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-算法"><span class="nav-number">2.</span> <span class="nav-text">第二章 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-线性表"><span class="nav-number">3.</span> <span class="nav-text">第三章 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8、-静态链表：用数组描述的链表叫做静态链表"><span class="nav-number">3.1.</span> <span class="nav-text">8、 静态链表：用数组描述的链表叫做静态链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-线性表"><span class="nav-number">4.</span> <span class="nav-text">第四章 线性表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-串"><span class="nav-number">5.</span> <span class="nav-text">第五章 串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-树"><span class="nav-number">6.</span> <span class="nav-text">第六章 树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七章-图"><span class="nav-number">7.</span> <span class="nav-text">第七章 图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八章-查找"><span class="nav-number">8.</span> <span class="nav-text">第八章 查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章-排序"><span class="nav-number">9.</span> <span class="nav-text">第九章 排序</span></a></li></ol></div>
             
 
           </div>
@@ -818,7 +839,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

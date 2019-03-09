@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java 设计模式 状态模式," />
+  <meta name="keywords" content="java 设计模式 状态模式,">
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为
-何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。
-不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta name="description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为 何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。 不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta name="keywords" content="java 设计模式 状态模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【设计模式】Java状态模式（1）">
 <meta property="og:url" content="https://lichong951.github.io/2017/05/20/designpattern-state1/index.html">
 <meta property="og:site_name" content="Lc">
-<meta property="og:description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为
-何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。
-不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta property="og:description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为 何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。 不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-03-09T09:09:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【设计模式】Java状态模式（1）">
-<meta name="twitter:description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为
-何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。
-不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
+<meta name="twitter:description" content="State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为 何时使用状态模式State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。 不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我">
 
 
 
@@ -124,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://lichong951.github.io/2017/05/20/designpattern-state1/"/>
+  <link rel="canonical" href="https://lichong951.github.io/2017/05/20/designpattern-state1/">
 
 
 
@@ -158,7 +154,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lc</span>
         <span class="logo-line-after"><i></i></span>
@@ -188,7 +184,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -198,7 +194,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -241,7 +237,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lichong">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -409,7 +405,7 @@ public String getColor() {
 　}
 }
 </code></pre><p>至此，我们也就实现了State的refactorying过程。</p>
-<h3 id="源码地址https-github-com-lichong951-designpattern-lichong951-git"><a href="#源码地址https-github-com-lichong951-designpattern-lichong951-git" class="headerlink" title="源码地址https://github.com/lichong951/designpattern-lichong951.git"></a>源码地址<a href="https://github.com/lichong951/designpattern-lichong951.git" target="_blank" rel="external">https://github.com/lichong951/designpattern-lichong951.git</a></h3><p>参考：<a href="http://www.cnblogs.com/Coda/p/4312281.html" target="_blank" rel="external">http://www.cnblogs.com/Coda/p/4312281.html</a></p>
+<h3 id="源码地址https-github-com-lichong951-designpattern-lichong951-git"><a href="#源码地址https-github-com-lichong951-designpattern-lichong951-git" class="headerlink" title="源码地址https://github.com/lichong951/designpattern-lichong951.git"></a>源码地址<a href="https://github.com/lichong951/designpattern-lichong951.git" target="_blank" rel="noopener">https://github.com/lichong951/designpattern-lichong951.git</a></h3><p>参考：<a href="http://www.cnblogs.com/Coda/p/4312281.html" target="_blank" rel="noopener">http://www.cnblogs.com/Coda/p/4312281.html</a></p>
 
       
     </div>
@@ -440,8 +436,8 @@ public String getColor() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/27/android-lichong/" rel="next" title="简历">
-                <i class="fa fa-chevron-left"></i> 简历
+              <a href="/2017/04/27/resume/" rel="next" title="面试总结记录">
+                <i class="fa fa-chevron-left"></i> 面试总结记录
               </a>
             
           </div>
@@ -542,7 +538,7 @@ public String getColor() {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

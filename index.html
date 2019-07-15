@@ -364,6 +364,211 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2019/03/08/DataStructuresAndAlgorlthms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/DataStructuresAndAlgorlthms/" itemprop="url">数据结构和算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T05:30:03+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>简单的数据结构<ul>
+<li>栈、队列、链表、数组、哈希表</li>
+<li>栈和队列的相同和不同之处</li>
+<li>栈通常采用的两种存储结构 </li>
+</ul>
+</li>
+<li><p>树</p>
+<ul>
+<li>二叉树、字典树、平衡树、排序树</li>
+<li>B 树、B+ 树、R 树、多路树、红黑树</li>
+</ul>
+</li>
+<li><p>堆</p>
+<ul>
+<li>大根堆、小根堆</li>
+</ul>
+</li>
+<li><p>图</p>
+<ul>
+<li>有向图、无向图、拓扑</li>
+</ul>
+</li>
+<li><p>排序算法</p>
+<ul>
+<li>稳定的排序<ul>
+<li>冒泡排序</li>
+<li>插入排序</li>
+<li>鸡尾酒排序</li>
+<li>桶排序</li>
+<li>计数排序</li>
+<li>归并排序</li>
+<li>原地归并排序</li>
+<li>二叉排序树排序</li>
+<li>鸽巢排序</li>
+<li>基数排序</li>
+<li>侏儒排序</li>
+<li>图书馆排序</li>
+<li>块排序</li>
+</ul>
+</li>
+<li>不稳定的排序<ul>
+<li>选择排序</li>
+<li>希尔排序</li>
+<li>Clover 排序算法</li>
+<li>梳排序</li>
+<li>堆排序</li>
+<li>平滑排序</li>
+<li>快速排序</li>
+<li>内省排序</li>
+<li>耐心排序  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>两个栈实现队列，和两个队列实现栈</p>
+</li>
+<li>深度优先和广度优先搜索</li>
+<li>全排列、贪心算法、KMP 算法、hash 算法</li>
+<li>海量数据处理<ul>
+<li>分治，hash 映射，堆排序，双层桶划分，Bloom Filter，bitmap，数据库索引，mapreduce </li>
+</ul>
+</li>
+</ol>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈是一种“先进后出”的一种数据结构，有压栈出栈两种操作方式</p>
+<h4 id="栈的分类"><a href="#栈的分类" class="headerlink" title="栈的分类"></a>栈的分类</h4><p>栈主要分为两类：</p>
+<ul>
+<li>静态栈</li>
+<li>动态栈</li>
+</ul>
+<p><strong>【静态栈】</strong></p>
+<p>静态栈的核心是数组，类似于一个连续内存的数组，我们只能操作其栈顶元素。</p>
+<p><strong>【动态栈】</strong></p>
+<p>静态栈的核心是数组，类似于一个连续内存的数组，我们只能操作其栈顶节点。<br><img src="../pic/stack01.png" alt="MacDown logo"></p>
+<h4 id="栈的算法"><a href="#栈的算法" class="headerlink" title="栈的算法"></a>栈的算法</h4><p>首先要明白以下思路：</p>
+<ul>
+<li>栈操作的是一个一个节点</li>
+<li>栈本身也是一种存储的数据结构</li>
+<li>栈有初始化、压栈、出栈、判空、遍历、清空等主要方法</li>
+</ul>
+<h4 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h4><ul>
+<li>数制转换</li>
+<li>括号匹配的检验<h4 id="栈通常采用的两种存储结构"><a href="#栈通常采用的两种存储结构" class="headerlink" title="栈通常采用的两种存储结构"></a>栈通常采用的两种存储结构</h4><h4 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h4></li>
+<li><a href="https://www.cnblogs.com/xiaoyouPrince/p/8082640.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaoyouPrince/p/8082640.html</a></li>
+</ul>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><h4 id="栈和队列的相同与不同"><a href="#栈和队列的相同与不同" class="headerlink" title="栈和队列的相同与不同"></a>栈和队列的相同与不同</h4><h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p><img src="../pic/me.jpg" alt="MacDown logo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2018/05/13/【VPN】Mac下使用SS教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1128,7 +1333,7 @@ $ sudo pip install scikit-learn --upgrade --ignore-installed
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/04/12/framework-imageloader/">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/05/20/designpattern-state1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lichong">
@@ -1147,7 +1352,7 @@ $ sudo pip install scikit-learn --upgrade --ignore-installed
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/12/framework-imageloader/" itemprop="url">网络图片加载工具</a></h1>
+                <a class="post-title-link" href="/2017/05/20/designpattern-state1/" itemprop="url">【设计模式】Java状态模式（1）</a></h1>
         
 
         <div class="post-meta">
@@ -1159,8 +1364,8 @@ $ sudo pip install scikit-learn --upgrade --ignore-installed
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T19:58:32+08:00">
-                2017-04-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T21:41:22+08:00">
+                2017-05-20
               </time>
             
 
@@ -1199,107 +1404,113 @@ $ sudo pip install scikit-learn --upgrade --ignore-installed
       
         
           
-            <h2 id="《Android-Universal-Image-Loader》"><a href="#《Android-Universal-Image-Loader》" class="headerlink" title="《Android-Universal-Image-Loader》"></a>《Android-Universal-Image-Loader》</h2><h5 id="1、-数据结构分析"><a href="#1、-数据结构分析" class="headerlink" title="1、 数据结构分析"></a>1、 数据结构分析</h5><pre><code>/** Stores not strong references to objects */
-private final Map&lt;String, Reference&lt;Bitmap&gt;&gt; softMap = Collections.synchronizedMap(new HashMap&lt;String, Reference&lt;Bitmap&gt;&gt;());
+            <p>State的定义：不同的状态，不同的行为；或者说，每个状态有着相应的行为</p>
+<h2 id="何时使用状态模式"><a href="#何时使用状态模式" class="headerlink" title="何时使用状态模式"></a>何时使用状态模式</h2><p>State模式在实际使用中比较多，适合”状态的切换”。因为我们经常会使用If elseif else 进行状态切换， 如果针对状态的这样判断切换反复出现，我们就要联想到是否可以采取State模式了。</p>
+<p>不只是根据状态，也有根据属性。如果某个对象的属性不同，对象的行为就不一样，这点在数据库系统中出现频率比较高，我们经常会在一个数据表的尾部，加上property属性含义的字段，用以标识记录中一些特殊性质的记录，这种属性的改变(切换)又是随时可能发生的，就有可能要使用State。</p>
+<p>在实际使用，类似开关一样的状态切换是很多的，但有时并不是那么明显，取决于你的经验和对系统的理解深度。</p>
+<p>这里要阐述的是”开关切换状态” 和” 一般的状态判断”是有一些区别的，” 一般的状态判断”也是有 if..elseif结构，例如：</p>
+<pre><code>if (which==1) state=&quot;hello&quot;;
+else if (which==2) state=&quot;hi&quot;;
+else if (which==3) state=&quot;bye&quot;;
+</code></pre><p>这是一个 “ 一般的状态判断”，state值的不同是根据which变量来决定的，which和state没有关系。如果改成：</p>
+<pre><code>if (state.euqals(&quot;bye&quot;)) state=&quot;hello&quot;;
+　else if (state.euqals(&quot;hello&quot;)) state=&quot;hi&quot;;
+　else if (state.euqals(&quot;hi&quot;)) state=&quot;bye&quot;;
+</code></pre><p>这就是 “开关切换状态”，是将state的状态从”hello”切换到”hi”，再切换到””bye”；在切换到”hello”，好象一个旋转开关，这种状态改变就可以使用State模式了。</p>
+<p>如果单纯有上面一种将”hello”–&gt;”hi”–&gt;”bye”–&gt;”hello”这一个方向切换，也不一定需要使用State模式，因为State模式会建立很多子类，复杂化，但是如果又发生另外一个行为：将上面的切换方向反过来切换，或者需要任意切换，就需要State了。</p>
+<p>请看下例：</p>
+<pre><code>public class Context{
+　　private Color state=null;
+　　public void push(){
+　　　　//如果当前red状态 就切换到blue
+　　　　if (state==Color.red) state=Color.blue;
+　　　　//如果当前blue状态 就切换到green
+　　　　else if (state==Color.blue) state=Color.green;
+　　　　//如果当前black状态 就切换到red
+　　　　else if (state==Color.black) state=Color.red;
+　　　　//如果当前green状态 就切换到black
+　　　　else if (state==Color.green) state=Color.black;
+　　　　Sample sample=new Sample(state);
+　　　　sample.operate();
+　　}
+　　public void pull(){
+　　　　//与push状态切换正好相反
+　　　　if (state==Color.green) state=Color.blue;
+　　　　else if (state==Color.black) state=Color.green;
+　　　　else if (state==Color.blue) state=Color.red;
+　　　　else if (state==Color.red) state=Color.black;
+　　　　Sample2 sample2=new Sample2(state);
+　　　　sample2.operate();
+　　}
+}
+</code></pre><p>在上例中，我们有两个动作push推和pull拉，这两个开关动作，改变了Context颜色，至此，我们就需要使用State模式优化它。</p>
+<p>另外注意：但就上例,state的变化，只是简单的颜色赋值，这个具体行为是很简单的，State适合巨大的具体行为，因此在,就本例，实际使用中也不一定非要使用State模式，这会增加子类的数目，简单的变复杂。</p>
+<p>例如：银行帐户，经常会在Open 状态和Close状态间转换。</p>
+<p>例如：经典的TcpConnection，Tcp的状态有创建 侦听 关闭三个，并且反复转换，其创建 侦听 关闭的具体行为不是简单一两句就能完成的，适合使用State。</p>
+<p>例如：信箱POP帐号，会有四种状态，start HaveUsername Authorized quit，每个状态对应的行为应该是比较大的，适合使用State。</p>
+<p>例如：在工具箱挑选不同工具，可以看成在不同工具中切换，适合使用State。如 具体绘图程序，用户可以选择不同工具绘制方框 直线 曲线，这种状态切换可以使用State。</p>
+<h2 id="如何使用状态模式"><a href="#如何使用状态模式" class="headerlink" title="如何使用状态模式"></a>如何使用状态模式</h2><p>State需要两种类型实体参与：<br>state manager 状态管理器，就是开关，如上面例子的Context实际就是一个state manager，在state manager中有对状态的切换动作。<br>用抽象类或接口实现的父类，不同状态就是继承这个父类的不同子类。<br>以上面的Context为例，我们要修改它，建立两个类型的实体。</p>
+<p>第一步，首先建立一个父类：</p>
+<pre><code>package top.lc951.state1;
 
-private final List&lt;Bitmap&gt; hardCache = Collections.synchronizedList(new LinkedList&lt;Bitmap&gt;());
-</code></pre><p>LinkedHashMap中的get()方法不仅返回所匹配的值，并且在返回前还会将所匹配的key对应的entry调整在列表中的顺序（LinkedHashMap使用双链表来保存数据），让它处于列表的最后。当然，这种情况必须是在LinkedHashMap中accessOrder==true的情况下才生效的，反之就是get()方法不会改变被匹配的key对应的entry在列表中的位置</p>
-<p>LinkedHashMap:</p>
-<pre><code>根据链表中元素的顺序可以分为：按插入顺序的链表，和按访问顺序(调用get方法)的链表。  
+public abstract class  State {
+    public abstract void handlepush(Context c);
+    public abstract  void handlepull(Context c);
+    public abstract String getColor();
 
-默认是按插入顺序排序，如果指定按访问顺序排序，那么调用get方法后，会将这次访问的元素移至链表尾部，不断访问可以形成按访问顺序排序的链表。  可以重写removeEldestEntry方法返回true值指定插入元素时移除最老的元素。 
-</code></pre><h5 id="2、-缓存策略分析"><a href="#2、-缓存策略分析" class="headerlink" title="2、 缓存策略分析"></a>2、 缓存策略分析</h5><p>UIL中的内存缓存策略</p>
-<pre><code>1. 只使用的是强引用缓存 
+}
+</code></pre><p>父类中的方法要对应state manager中的开关行为，在state manager中 本例就是Context中，有两个开关动作push推和pull拉.那么在状态父类中就要有具体处理这两个动作：handlepush() handlepull()；同时还需要一个获取push或pull结果的方法getcolor()。</p>
+<p>下面是具体子类的实现：</p>
+<pre><code>package top.lc951.state1;
 
-LruMemoryCache（这个类就是这个开源框架默认的内存缓存类，缓存的是bitmap的强引用，下面我会从源码上面分析这个类）
- 2.使用强引用和弱引用相结合的缓存有
+public class BlueState extends State {
 
- UsingFreqLimitedMemoryCache（如果缓存的图片总量超过限定值，先删除使用频率最小的bitmap）
 
-LRULimitedMemoryCache（这个也是使用的lru算法，和LruMemoryCache不同的是，他缓存的是bitmap的弱引用）
-FIFOLimitedMemoryCache（先进先出的缓存策略，当超过设定值，先删除最先加入缓存的bitmap）
-LargestLimitedMemoryCache(当超过缓存限定值，先删除最大的bitmap对象)
-LimitedAgeMemoryCache（当 bitmap加入缓存中的时间超过我们设定的值，将其删除）
- 3.只使用弱引用缓存
+@Override
+public void handlepush(Context c) {
+    // TODO Auto-generated method stub
+    c.setState(new GreenState());
 
- WeakMemoryCache（这个类缓存bitmap的总大小没有限制，唯一不足的地方就是不稳定，缓存的图片容易被回收掉）
-</code></pre><p>我们直接选择UIL中的默认配置缓存策略进行分析。</p>
-<p>ImageLoaderConfiguration config = ImageLoaderConfiguration.createDefault(context);<br>ImageLoaderConfiguration.createDefault(…)这个方法最后是调用Builder.build()方法创建默认的配置参数的。默认的内存缓存实现是LruMemoryCache，磁盘缓存是UnlimitedDiscCache。</p>
-<p>业务如下</p>
-<pre><code>① UI：请求数据，使用唯一的Key值索引Memory Cache中的Bitmap。
+}
 
-② 内存缓存：缓存搜索，如果能找到Key值对应的Bitmap，则返回数据。否则执行第三步。
+@Override
+public void handlepull(Context c) {
+    // TODO Auto-generated method stub
+    c.setState(new RedState());
 
-③ 硬盘存储：使用唯一Key值对应的文件名，检索SDCard上的文件。
+}
 
-④ 如果有对应文件，使用BitmapFactory.decode*方法，解码Bitmap并返回数据，同时将数据写入缓存。如果没有对应文件，执行第五步。
+@Override
+public String getColor() {
+    // TODO Auto-generated method stub
+    return &quot;blue&quot;;
 
-⑤ 下载图片：启动异步线程，从数据源下载数据(Web)。
+}
+</code></pre><p>}</p>
+<p>同样，其他状态的子类实现如blue一样。</p>
+<p>第二步，要重新改写State manager 也就是本例的Context</p>
+<pre><code>public class Context{
+　private Sate state=null; //我们将原来的 Color state 改成了新建的State state;
+　//setState是用来改变state的状态 使用setState实现状态的切换
+　pulic void setState(State state){
+　　　　this.state=state;
+　}
+　public void push(){
+　　//状态的切换的细节部分,在本例中是颜色的变化,已经封装在子类的handlepush中实现,这里无需关心
+　　state.handlepush(this);
+　　//因为sample要使用state中的一个切换结果,使用getColor()
+　　Sample sample=new Sample(state.getColor());
+　　sample.operate();
+　}
+　public void pull(){
+　　state.handlepull(this);
+　　Sample2 sample2=new Sample2(state.getColor());
+　　sample2.operate();
+　}
+}
+</code></pre><p>至此，我们也就实现了State的refactorying过程。</p>
+<h3 id="源码地址https-github-com-lichong951-designpattern-lichong951-git"><a href="#源码地址https-github-com-lichong951-designpattern-lichong951-git" class="headerlink" title="源码地址https://github.com/lichong951/designpattern-lichong951.git"></a>源码地址<a href="https://github.com/lichong951/designpattern-lichong951.git" target="_blank" rel="noopener">https://github.com/lichong951/designpattern-lichong951.git</a></h3><p>参考：<a href="http://www.cnblogs.com/Coda/p/4312281.html" target="_blank" rel="noopener">http://www.cnblogs.com/Coda/p/4312281.html</a></p>
 
-⑥ 若下载成功，将数据同时写入硬盘和缓存，并将Bitmap显示在UI中。
-</code></pre><h5 id="3、-设计模式应用分析"><a href="#3、-设计模式应用分析" class="headerlink" title="3、 设计模式应用分析"></a>3、 设计模式应用分析</h5><ol>
-<li>单例模式的应用在</li>
-<li>builder模式</li>
-</ol>
-<h5 id="4、-线程池"><a href="#4、-线程池" class="headerlink" title="4、 线程池"></a>4、 线程池</h5><p>线程池能够带来三个好处：</p>
-<pre><code>第一：降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗
-第二：提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行
-第三：提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控
-</code></pre><p><strong>创建一个ThreadPoolExecutor需要的参数：</strong></p>
-<pre><code>corePoolSize（线程池的基本大小）：当提交一个任务到线程池时，线程池会创建一个线程来执行任务，即使其他空闲的基本线程能够执行新任务也会创建线程，等到需要执行的任务数大于线程池基本大小时就不再创建。如果调用了线程池的prestartAllCoreThreads方法，线程池会提前创建并启动所有基本线程。
-
-runnableTaskQueue（任务队列）：用于保存等待执行的任务的阻塞队列。 可以选择以下几个阻塞队列。
-
-ArrayBlockingQueue：是一个基于数组结构的有界阻塞队列，此队列按 FIFO（先进先出）原则对元素进行排序。
-
-LinkedBlockingQueue：一个基于链表结构的阻塞队列，此队列按FIFO （先进先出） 排序元素，吞吐量通常要高于ArrayBlockingQueue。静态工厂方法Executors.newFixedThreadPool()使用了这个队列。
-
-SynchronousQueue：一个不存储元素的阻塞队列。每个插入操作必须等到另一个线程调用移除操作，否则插入操作一直处于阻塞状态，吞吐量通常要高于LinkedBlockingQueue，静态工厂方法Executors.newCachedThreadPool使用了这个队列。
-
-PriorityBlockingQueue：一个具有优先级的无限阻塞队列。
-
-maximumPoolSize（线程池最大大小）：线程池允许创建的最大线程数。如果队列满了，并且已创建的线程数小于最大线程数，则线程池会再创建新的线程执行任务。值得注意的是如果使用了无界的任务队列这个参数就没什么效果。
-
-ThreadFactory：用于设置创建线程的工厂，可以通过线程工厂给每个创建出来的线程设置更有意义的名字。
-
-RejectedExecutionHandler（饱和策略）：当队列和线程池都满了，说明线程池处于饱和状态，那么必须采取一种策略处理提交的新任务。这个策略默认情况下是AbortPolicy，表示无法处理新任务时抛出异常。以下是JDK1.5提供的四种策略。
-    # AbortPolicy：直接抛出异常。
-    # CallerRunsPolicy：只用调用者所在线程来运行任务。
-    # DiscardOldestPolicy：丢弃队列里最近的一个任务，并执行当前任务。
-    # DiscardPolicy：不处理，丢弃掉。
-当然也可以根据应用场景需要来实现RejectedExecutionHandler接口自定义策略。如记录日志或持久化不能处理的任务。
-
-keepAliveTime（线程活动保持时间）：线程池的工作线程空闲后，保持存活的时间。所以如果任务很多，并且每个任务执行的时间比较短，可以调大这个时间，提高线程的利用率。
-
-TimeUnit（线程活动保持时间的单位）：可选的单位有天（DAYS），小时（HOURS），分钟（MINUTES），毫秒(MILLISECONDS)，微秒(MICROSECONDS, 千分之一毫秒)和毫微秒(NANOSECONDS, 千分之一微秒)。
-</code></pre><p><strong>用Executors静态工厂方法创建的线程池类型：</strong></p>
-<pre><code>a) newFixedThreadPool：创建一个定长的线程池。达到最大线程数后，线程数不再增长。如果一个线程由于非预期Exception而结束，线程池会补充一个新的线程。
-
-b) newCachedThreadPool：创建一个可缓存的线程池。当池长度超过处理需求时，可以回收空闲的线程。
-
-c) newSingleThreadPool：创建一个单线程executor。
-
-d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时的以及周期性的任务执行。类似于Timer。但是，Timer是基于绝对时间，对系统时钟的改变是敏感的，而ScheduledThreadPoolExecutor只支持相对时间。
-     1) Timer是创建唯一的线程来执行所有的timer任务。如果一个任务超时了，会导致其他的TimerTask时间准确性出问题。
-     2）如果TimerTask抛出uncheck 异常，Timer将会产生无法预料的行为。因此，ScheduledThreadPoolExecutor可以完全代替Timer。
-</code></pre><p><strong>合理的配置线程池</strong></p>
-<pre><code>要想合理的配置线程池，就必须首先分析任务特性，可以从以下几个角度来进行分析：
-
-任务的性质：CPU密集型任务，IO密集型任务和混合型任务。
-任务的优先级：高，中和低。
-任务的执行时间：长，中和短。
-任务的依赖性：是否依赖其他系统资源，如数据库连接。
-
-任务性质不同的任务可以用不同规模的线程池分开处理。CPU密集型任务配置尽可能小的线程，如配置Ncpu+1个线程的线程池。IO密集型任务则由于线程并不是一直在执行任务，则配置尽可能多的线程，如2*Ncpu。混合型的任务，如果可以拆分，则将其拆分成一个CPU密集型任务和一个IO密集型任务，只要这两个任务执行的时间相差不是太大，那么分解后执行的吞吐率要高于串行执行的吞吐率，如果这两个任务执行时间相差太大，则没必要进行分解。我们可以通过Runtime.getRuntime().availableProcessors()方法获得当前设备的CPU个数。
-
-优先级不同的任务可以使用优先级队列PriorityBlockingQueue来处理。它可以让优先级高的任务先得到执行，需要注意的是如果一直有优先级高的任务提交到队列里，那么优先级低的任务可能永远不能执行。
-
-执行时间不同的任务可以交给不同规模的线程池来处理，或者也可以使用优先级队列，让执行时间短的任务先执行。
-
-依赖数据库连接池的任务，因为线程提交SQL后需要等待数据库返回结果，如果等待的时间越长CPU空闲时间就越长，那么线程数应该设置越大，这样才能更好的利用CPU。
-
-建议使用有界队列，有界队列能增加系统的稳定性和预警能力，可以根据需要设大一点，比如几千。有一次我们组使用的后台任务线程池的队列和线程池全满了，不断的抛出抛弃任务的异常，通过排查发现是数据库出现了问题，导致执行SQL变得非常缓慢，因为后台任务线程池里的任务全是需要向数据库查询和插入数据的，所以导致线程池里的工作线程全部阻塞住，任务积压在线程池里。如果当时我们设置成无界队列，线程池的队列就会越来越多，有可能会撑满内存，导致整个系统不可用，而不只是后台任务出现问题。当然我们的系统所有的任务是用的单独的服务器部署的，而我们使用不同规模的线程池跑不同类型的任务，但是出现这样问题时也会影响到其他任务。
-</code></pre>
           
         
       
@@ -1347,7 +1558,7 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/30/arithmetic/">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/04/27/resume/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lichong">
@@ -1366,7 +1577,7 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/03/30/arithmetic/" itemprop="url">算法（java版）</a></h1>
+                <a class="post-title-link" href="/2017/04/27/resume/" itemprop="url">面试总结记录</a></h1>
         
 
         <div class="post-meta">
@@ -1378,8 +1589,8 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T21:43:22+08:00">
-                2017-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-27T20:10:01+08:00">
+                2017-04-27
               </time>
             
 
@@ -1418,621 +1629,254 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
       
         
           
-            <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><pre><code>public static void bubbleSort(int[] a) {
-    if (a == null) {
-        return;
-    }
+            <h2 id="1、-Android性能分析工具"><a href="#1、-Android性能分析工具" class="headerlink" title="1、 Android性能分析工具"></a>1、 Android性能分析工具</h2><pre><code>1.1 TraceView:
+    最简单的方式就是直接打开DDMS，选择一个进程，然后按上面的“Start Method Profiling”按钮，
+    第2种方式就是使用android.os.Debug.startMethodTracing();和android.os.Debug.stopMethodTracing();方法
+    重要指标 Calls+Recur Calls／Total（方法执行的次数）；Cpu Time／Call（方法耗时）
+1.2 Eclipse Memory Analyzer Tool 内存使用
 
-    for (int i = 0; i &lt; a.length; i++) {
-        for (int j = a.length - 1; j &gt; i; j--) {
-            if (a[j - 1] &gt; a[j]) {
-                int temp = a[j];
-                a[j] = a[j - 1];
-                a[j - 1] = temp;
-            }
+1.3 Dump UI Hierarchy for UI Atomator 分析UI层级
 
-        }
-    }
+1.4 systrace
+    Systrace是Android4.1中新增的性能数据采样和分析工具。它可帮助开发者收集Android关键子系统（如surfaceflinger、WindowManagerService等Framework部分关键模块、服务）的运行信息，从而帮助开发者更直观的分析系统瓶颈，改进性能。
+    Systrace的功能包括跟踪系统的I/O操作、内核工作队列、CPU负载以及Android各个子系统的运行状况等。在Android平台中，它主要由3部分组成：
+    内核部分：Systrace利用了Linux Kernel中的ftrace功能。所以，如果要使用Systrace的话，必须开启kernel中和ftrace相关的模块。
+    数据采集部分：Android定义了一个Trace类。应用程序可利用该类把统计信息输出给ftrace。同时，Android还有一个atrace程序，它可以从ftrace中读取统计信息然后交给数据分析工具来处理。
+    数据分析工具：Android提供一个systrace.py（python脚本文件，位于Android SDK目录/tools/systrace中，其内部将调用atrace程序）用来配置数据采集的方式（如采集数据的标签、输出文件名等）和收集ftrace统计数据并生成一个结果网页文件供用户查看。
 
-    for (int i = 0; i &lt; a.length; i++) {
-        System.out.println(a[i]);
+1.5 Oprofile：性能数据采集和分析工具
+
+1.6 Hierarchy Viewer（层级查看器）
+</code></pre><p>参考：<em><a href="http://www.jianshu.com/p/da2a4bfcba68" target="_blank" rel="noopener">http://www.jianshu.com/p/da2a4bfcba68</a></em></p>
+<pre><code>1.7 Battery Historian 
+    Google出品, 通过Android系统的bugreport文件来做电量使用分析的工具
+    https://github.com/google/battery-historian
+1.8 NetEase/Emmagee
+    针对Android App的CPU, 内存, 网络, 电量等多项综合的测试分析.
+    https://github.com/NetEase/Emmagee
+
+1.9 Square
+    Square出品, 必属精品.
+    类似与App探针的内存泄露监测工具.
+    https://github.com/square/leakcanary
+
+1.10 AndroidDevMetrics
+    一个library, 用来检测Activity生命周期执行性能, Dagger2注入性能以及帧率性能的工具
+    https://github.com/frogermcs/AndroidDevMetrics
+</code></pre><p>2、 Android内存优化方案</p>
+<pre><code>2.1 Android应用String/StringBuilder/StringBuffer优化建议
+字符串操作在Android应用开发中是十分常见的操作，也就是这个最简单的字符串操作却也暗藏很多潜在的性能问题，下面我们实例来说说。
+先看下面这个关于String和StringBuffer的对比例子：
+//性能差的实现
+String str1 = &quot;Name:&quot;;
+String str2 = &quot;GJRS&quot;;
+String Str = str1 + str2;
+//性能好的实现
+String str1 = &quot;Name:&quot;;
+String str2 = &quot;GJRS&quot;;
+StringBuffer str = new StringBuilder().append(str1).append(str2);
+
+通过这个例子可以看出来，String对象（记得是对象，不是常量）和StringBuffer对象的主要性能区别在于String对象是不可变的，所以每次对String对象做改变操作（譬如“+”操作）时其实都生成了新的String对象实例，所以会导致内存消耗性能问题；而StringBuffer对象做改变操作每次都会对自己进行操作，所以不需要消耗额外的内存空间。
+
+我们再看一个关于String和StringBuffer的对比例子：
+//性能差的实现
+StringBuffer str = new StringBuilder().append(&quot;Name:&quot;).append(&quot;GJRS&quot;);
+//性能好的实现
+String Str = &quot;Name:&quot; + &quot;GJRS&quot;;
+在这种情况下你会发现StringBuffer的性能反而没有String的好，原因是在JVM解释时认为 
+String Str = &quot;Name:&quot; + &quot;GJRS&quot;;就是String Str = &quot;Name:GJRS&quot;;，所以自然比StringBuffer快了。
+可以发现，如果我们拼接的是字符串常量则String效率比StringBuffer高，如果拼接的是字符串对象，则StringBuffer比String效率高，我们在开发中要酌情选择。当然，除过注意StringBuffer和String的效率问题，我们还应该注意另一个问题，那就是StringBuffer和StringBuilder的区别，其实StringBuffer和StringBuilder都继承自同一个父类，只是StringBuffer是线程安全的，也就是说在不考虑多线程情况下StringBuilder的性能又比StringBuffer高。
+PS：如果想追究清楚他们之间具体细节差异，麻烦自己查看实现源码即可
+
+2.2 Android应用HashMap与ArrayMap及SparseArray优化建议
+在Android开发中涉及到数据逻辑部分大部分用的都是Java的API（譬如HashMap），但是对于Android设备来说有些Java的API并不适合，可能会导致系统性能下降，好在Google团队已经意识到这些问题，所以他们针对Android设备对Java的一些API进行了优化，优化最多就是使用了ArrayMap及SparseArray替代HashMap来获得性能提升。
+
+HashMap：
+HashMap内部使用一个默认容量为16的数组来存储数据，数组中每一个元素存放一个链表的头结点，其实整个HashMap内部结构就是一个哈希表的拉链结构。HashMap默认实现的扩容是以2倍增加，且获取一个节点采用了遍历法，所以相对来说无论从内存消耗还是节点查找上都是十分昂贵的。
+
+SparseArray：
+SparseArray比HashMap省内存是因为它避免了对Key进行自动装箱（int转Integer），它内部是用两个数组来进行数据存储的（一个存Key，一个存Value），它内部对数据采用了压缩方式来表示稀疏数组数据，从而节约内存空间，而且其查找节点的实现采用了二分法，很明显可以看见性能的提升。
+
+ArrayMap：
+ArrayMap内部使用两个数组进行数据存储，一个记录Key的Hash值，一个记录Value值，它和SparseArray类似，也会在查找时对Key采用二分法。
+有了上面的基本了解我们可以得出结论供开发时参考，当数据量不大（千位级内）且Key为int类型时使用SparseArray替换HashMap效率高；当数据量不大（千位级内）且数据类型为Map类型时使用ArrayMap替换HashMap效率高；其他情况下HashMap效率相对高于二者
+
+2.3 Android应用ContentProviderOperation优化建议
+ContentProvider是Android应用开发的核心组件之一，有时候在开发中需要使用ContentProvider对多行数据进行操作，我们的做法一般是多次调运相关操作方法，殊不知这种实现方式是非常低性能的，取而代之的做法应该是使用批量操作，具体为了使批量更新、插入、删除数据操作更加方便官方提供了ContentProviderOperation工具类。所以在我们开发中遇到类似情景时请务必使用批量操作，具体的优势如下：
+所有的操作都在一个事务中执行，可以保证数据的完整性。
+批量操作在一个事务中执行，所以只用打开、关闭一个事务。
+减轻应用程序与ContentProvider间的多次频繁交互，提升性能。
+可以看见，这对于数据库操作来说是一个非常有用的优化措施，烦请务必重视（我们项目优化过，的确有很大提升）
+
+2.4 其他逻辑优化
+避免在Android中使用Java的枚举类型，因为编译后不但占空间，加载也费时，完全没有static final的变量好用、高效。
+
+Handler发送消息时尽量使用obtain去获取已经存在的Message对象进行复用，而不是新new Message对象，这样可以减轻内存压力。
+
+在使用后台Service时尽量将能够替换为IntentService的地方替换为此，这样可以减轻系统压力、省电、省内存、省CPU占用率。
+
+在当前类内部尽量不要通过自己的getXXX、setXXX对自己内部成员进行操作，而是直接使用，这样可以提高代码执行效率。
+
+不要一味的为了设计模式而过分的抽象代码，因为代码抽象系数与代码加载执行时间成正比。
+
+尽量减少锁个数、减小锁范围，避免造成性能问题。
+
+合理的选择使用for循环与增强型for循环，譬如不要在ArrayList上使用增强型for循环等。
+</code></pre><p>3、 Android UI性能优化方案</p>
+<p>4、 设计模式</p>
+<p>5、 Android网络访问框架选型和优化</p>
+<pre><code>5.1 volley
+5.2 retrofit
+5.3 andrid-async-http
+</code></pre><p>6、 Bug解决系统：Bugly；BugTags；GT；iTest；Emmagee；</p>
+<p>7、 Android应用移动设备电池耗电性能分析</p>
+<p>有了UI性能优化、内存性能优化、代码编写优化之后我们在来说说应用开发中很重要的一个优化模块—–电量优化。</p>
+<p>7.1 Android应用耗电量概念</p>
+<p>在盒子等开发时可能电量优化不是特别重视（视盒子待机真假待机模式而定），但是在移动设备开发中耗电量是一个非常重要的指标，如果用户一旦发现我们的应用非常耗电，不好意思，他们大多会选择卸载来解决此类问题，所以耗电量是一个十分重要的问题。</p>
+<p>关于我们应用的耗电量情况我们可以进行定长时间测试，至于具体的耗电量统计等请参考此文，同时我们还可以直接通过Battery Historian Tool来查看详细的应用电量消耗情况。最简单常用办法是通过命令直接查看，如下：</p>
+<p>adb shell dumpsys batterystats</p>
+<p>其实我们一款应用耗电量最大的部分不是UI绘制显示等，常见耗电量最大原因基本都是因为网络数据交互、GPS定位、大量内存性能问题、冗余的后台线程和Service等造成。</p>
+<p>7.2 Android应用耗电量优化建议</p>
+<p>优化电量使用情况我们不仅可以使用系统提供的一些API去处理，还可以在平时编写代码时就养成好的习惯。具体的一些建议如下：</p>
+<p>在需要网络的应用中，执行某些操作前尽量先进行网络状态判断。</p>
+<p>在网络应用传输中使用高效率的数据格式和解析方法，譬如JSON等。</p>
+<p>在传输用户反馈或者下载OTA升级包等不是十分紧急的操作时尽量采用压缩数据进行传输且延迟到设备充电和WIFI状态时进行。</p>
+<p>在有必要的情况下尽量通过PowerManager.WakeLock和JobScheduler来控制一些逻辑操作达到省电优化。</p>
+<p>对定位要求不太高的场景尽量使用网络定位，而不是GPS定位。</p>
+<p>对于定时任务尽量使用AlarmManager，而不是sleep或者Timer进行管理。</p>
+<p>尽可能的减少网络请求次数和减小网络请求时间间隔。</p>
+<p>后台任务要尽可能少的唤醒CPU，譬如IM通信的长连接心跳时间间隔、一些应用的后台定时唤醒时间间隔等要设计合理。</p>
+<p>特殊耗电业务情况可以进行弹窗等友好的交互设计提醒用户该操作会耗用过多电量。</p>
+<p>可以看见，上面只是一些常见的电量消耗优化建议。总之，作为应用开发者的我们要意识到电量损耗对于用户来说是非常敏感的，只有我们做到合理的电量优化才能赢得用户的芳心。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/04/22/handler-framework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/22/handler-framework/" itemprop="url">Handler机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T08:37:31+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Handler机制</p>
+<p>##Message结构分析<br>Handler部分源码：</p>
+<pre><code>    private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMillis) {
+    msg.target = this;
+    if (mAsynchronous) {
+        msg.setAsynchronous(true);
     }
+    return queue.enqueueMessage(msg, uptimeMillis);
 }
 </code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/30/book-3_data-structure/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lichong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/30/book-3_data-structure/" itemprop="url">《大话数据结构》</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T17:38:41+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="一、名词解释"><a href="#一、名词解释" class="headerlink" title="一、名词解释"></a>一、名词解释</h3><p>1、 数据结构：是相互之间存在一种或多种特定关系的数据元素的集合</p>
-<p>2、 数据：是描述客观事物的符号，是计算机中可以操作的对象是能被计算机识别；并输入计算机处理的符号集合</p>
-<p>3、 数据元素：是组成数据的有一定意义的基本单位，在计算机中通常作为整体处理；也被称为记录</p>
-<p>4、 数据项：一个数据元素可以由若干个数据项组成</p>
-<p>5、 数据项是数据不可分割的最小单位</p>
-<p>6、 数据对象：是性质相同的数据元素的集合，是数据的子集</p>
-<p>7、 逻辑结构：是指数据对象中元素之间的相互关系</p>
-<pre><code>7.1、 集合结构：集合结构中的数据元素除了同属于一个集合处，它们之间没有其他关系
-
-7.2、 线性结构：数据元素之间是一对一的关系
-
-7.3、 树形结构：数据元素存在一种一对多的层次关系
-
-7.4、 图形结构：数据元素是多对多的关系
-</code></pre><p>8、 物理结构：是指数据的逻辑结构在计算机中存储形式</p>
-<pre><code>8.1、 顺序存储结构：是把数据元素存放在地址连续的存储单元里，其数据间的逻辑关系和物理关系是一致的
-
-8.2、 链式存储结构：是把数据元素存放在任意的存储单元里，这组存储单元可以是连续的，也可以是不连续的
-</code></pre><p>9、 数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称</p>
-<pre><code>9.1、 原子类型：是不可以再分解的基本类型包括整型、实型、字符型等
-
-9.2、 结构类型：由若干个类型组合而成，是可以再分解的，例如：整型数组是由若干整型数据组成的
-</code></pre><p>10、 抽象数据类型（Abstract Data Type；ADT）是指一个数学模型及定义在该模型上的一组操作</p>
-<h2 id="第二章-算法"><a href="#第二章-算法" class="headerlink" title="第二章 算法"></a>第二章 算法</h2><p>1、 算法：是解决特定问题解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作</p>
-<pre><code>注：算法至少有一个或多个输出
-</code></pre><p>2、 算法的特性</p>
-<pre><code>2.1 有穷性： 指算法在执行有限的步骤后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成
-
-2.2 确定性：算法的每一步骤都具有确定的含义，不会出现二义性
-
-2.3 可行性：算法的每一步都必须是可行的，也就是说每一步都能够通过执行有限次数完成
-</code></pre><p>3、 算法设计的要求</p>
-<pre><code>3.1 正确性：算法的正确性是指算法至少应该具有输入，输出和加工处理无歧义性，能正确反映问题的需求能够得到问题的正确答案
-
-3.2 可读性：算法设计的另一目的是为了便于阅读理解和交流
-
-3.3 健壮性：当输入数据不合法时，算法也能做出相关处理，而不是产生异常或莫名其妙的结果
-
-3.4 时间效率高和存储量低
-</code></pre><p>4、 算法效率的度量方法</p>
-<pre><code>4.1 事后统计方法：这种方法主要是通过设计好的测试程序和数据，利用计算机计时器对不同算法编制的程序的运行时间进行比较，从而确定算法效率的高低
-
-4.2 事前分析估算方法：在计算机程序编制前，依据统计方法对算法进行估算
-
-注： 一个程序的运行时间，依赖于算法的好坏和问题的输入规模
-</code></pre><p>5、 函数的渐进增长：给定两个函数f（n）和g（n），如果存在一个整数N，使得对于所有的n&gt;N,f(n)总是比g（n）大，那么我们说f（n）的增长渐进快于g（n）</p>
-<pre><code>注： 判断一个算法的效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项（最高阶项）的阶数
-</code></pre><p>6、 算法时间复杂度定义：在进行算法分析时，语句总的执行次数T（n）是关于问题规模n的函数，进而分析T（n）随n的变化情况并确定T（n）的数量级，算法的时间复杂度，也就是算法的时间度量，记作T（n）=O（f（n）），它表示随问题规模n的增长，算法执行时间的增长率和f（n）的增长率相同，称作算法的渐进时间复杂度。简称为时间复杂度，其中f（n）是问题规模n的某个函数。</p>
-<p>7、 推导大O阶</p>
-<pre><code>7.1 用常数 1 取代运行时间中的所有加法常数。
-
-7.2 在修改后的运行次数函数中，只保留最高阶项
-
-7.3 如果最高阶存在且不是 1，则去除与这个项相乘的常数，得到的结果就是大O阶
-</code></pre><p>8、 线性阶</p>
-<p>9、 对数阶：O（log n）</p>
-<p>10、 平方阶： O（n*n）</p>
-<p>11、 常见的时间复杂度</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">执行次数的函数</th>
-<th style="text-align:right">阶</th>
-<th style="text-align:center">非正式术语</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">12</td>
-<td style="text-align:right">O（1）</td>
-<td style="text-align:center">常数阶</td>
-</tr>
-<tr>
-<td style="text-align:left">2*n+3</td>
-<td style="text-align:right">O（n）</td>
-<td style="text-align:center">线性阶</td>
-</tr>
-<tr>
-<td style="text-align:left">3<em>n^2+2</em>n+1</td>
-<td style="text-align:right">O（n^2）</td>
-<td style="text-align:center">平方阶</td>
-</tr>
-<tr>
-<td style="text-align:left">5*log_2 n+20</td>
-<td style="text-align:right">O（log_n）</td>
-<td style="text-align:center">对数阶</td>
-</tr>
-<tr>
-<td style="text-align:left">2<em>n+3</em>n*log_2 n+19</td>
-<td style="text-align:right">O（n*log_n）</td>
-<td style="text-align:center">n*log_n阶</td>
-</tr>
-<tr>
-<td style="text-align:left">6<em>n^3+2</em>n^2+3n+4</td>
-<td style="text-align:right">O（n^3）</td>
-<td style="text-align:center">立方阶</td>
-</tr>
-<tr>
-<td style="text-align:left">2^n</td>
-<td style="text-align:right">O（2^n）</td>
-<td style="text-align:center">指数阶</td>
-</tr>
-</tbody>
-</table>
-<p>12、最坏情况运行时间是一种保证，那就是运行时间将不会再坏了，在应用中，这里一种最重要的需求，通常除非特别指定，我们提到的运行时间都是最坏情况的运行时间</p>
-<p>13、算法的空间复杂度通过计算算法所需的存储空间实现，算法空间复杂度的计算公式记作：S（n）=O（f（n）），其中，n为问题的规模，f（n）为语句关于n所占存储空间的函数</p>
-<h2 id="第三章-线性表"><a href="#第三章-线性表" class="headerlink" title="第三章 线性表"></a>第三章 线性表</h2><p>1、 线性表：零个或多个数据元素的有限序列</p>
-<p>2、 若将线性表记为（a_1,…,a_i-1,a_i,a_i+1,…,a_n）,则表中a_i-1领先于a_i,a_i领先于a_i+1,称a_i-1是a_i的直接前驱元素，a_i+1是a_i的直接后继元素。当i=1,2,…,n-1时，a_i有仅有一个后继元素，当i=2，3，…,n时，a_i有仅有一个直接前驱。</p>
-<pre><code>注：1） 线性表元素的个数n（n&gt;=0）定义为线性表的长度，当n=0时，称为空表。
-
-    2） 在较复杂的线性表中，一个数据元素可以由若干个数据项组成
-</code></pre><p>3、 线性表的顺序存储结构，指的是用一段地址连续的存储单元依次存储线性表的数据元素</p>
-<pre><code>属性：
-    1） 存储空间的启始位置
-    2） 线性表的最大存储位置
-    3） 线性表的当前长度
-</code></pre><p>4、 线性表顺序存储结构优缺点</p>
-<pre><code>优点
-    1） 无须为表中元素之间的逻辑关系而增加额外的存储空间
-    2） 可以快速地存取表中任一位置的元素
-
-缺点
-    1） 插入和删除操作需要移动大量元素
-    2） 当线性表长度变化较大时，难以确定存储空间的容量
-    3） 造成存储空间的“碎片”
-</code></pre><p>5、 线性表的链式存储结构的特点是用任一组任意的存储单元存储线性表的数据元素，这组存储单元可以是连续的，也可以是不连续的。</p>
-<p>6、 为了表示每个数据元素a_i与其直接后继数据元素a_i+1之间的逻辑关系，对数据元素a_i来说，除来存储其本身的信息之外，还需存储一个指示其直接后继的信息（即直接后继的存储位置）我们把存储数据元素信息的域称为数据域，把存储直接后继位置的域称为指针域。指针域中存储的信息称做指针或链，这两部分信息组成数据元素a_i的存储映像，称为节点（Node）。<br>    n个结点（a_i的存储映像）链结成一个链表，即为线性表（a_i,a_2,…a_n）的链式存储结构，因此链表的每个结点中包含一个指针域，所以叫做单链表</p>
-<p>7、 单链表结构与顺序存储结构优缺点</p>
-<pre><code>1） 存储分配方式
-    *  顺序存储结构用一段连续的存储单元依次存储线性表的数据元素
-    *  单链表采用链式存储结构，用一组任意的存储单元存放线性表的元素
-
-2）时间性能
-    *  查找
-        1） 顺序存储结构O（1）
-        2） 单链表O（n）
-    *  插入和删除
-        1） 顺序存储结构需要平均移动表长一半的元素，时间为O（n）
-        2） 单链表在线出某位置的指针后，插入和删除时间仅为O（1）
-
-    *  空间性能
-        1） 顺序存储结构需要预分配存储空间，分大了，浪费，分小了易发生上溢
-        2） 单链表不需要分配存储空间，只要有就可以分配，元素个数也不受限制
-</code></pre><h3 id="8、-静态链表：用数组描述的链表叫做静态链表"><a href="#8、-静态链表：用数组描述的链表叫做静态链表" class="headerlink" title="8、 静态链表：用数组描述的链表叫做静态链表"></a>8、 静态链表：用数组描述的链表叫做静态链表</h3><p>9、 静态链表的优缺点：</p>
-<pre><code>*  优点
-    1） 在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了在顺序存储结构中插入和删除操作需要移动大量元素的缺点
-*  缺点
-    1） 没有解决连续存储分配带来的表长难以确定的问题
-    2） 失去了顺序存储结构随机存取的特性
-</code></pre><p>10、 将单链表中终端结点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表，简称循环链表</p>
-<p>11、 双向链表（double linked list）是在单链表的每个结点，再设置一个指向其前驱结点的指针域        </p>
-<h2 id="第四章-线性表"><a href="#第四章-线性表" class="headerlink" title="第四章 线性表"></a>第四章 线性表</h2><p>1、 栈（stack）是限定仅在表尾进行插入和删除操作的线性表</p>
-<pre><code>注：允许插入和删除的一端称为栈顶（top）另一端称为栈底（bootom），不含任何数据元素的栈称为空栈，栈又称为后进先出（Last In First Out）的线性表，简称LIFO结构
-</code></pre><p>2、 栈的顺序存储结构</p>
-<p>3、 两栈共享空间</p>
-<p>4、 栈的链式存储结构，简称为链栈</p>
-<pre><code>注： 如果栈的使用过程中元素变化不可预料，有时很小，有时很大，那么最好用链栈，反之，如果它的变化在可控范围内，建议使用顺序栈会更好一些
-</code></pre><p>5、 栈的应用–递归</p>
-<p>6、 斐波那契数列实现</p>
-<p>7、 递归定义： 把一个直接调用自己或通过一系列的调用语句间接地调用自己的函数，称做递归函数</p>
-<p>8、 每个递归定义必须至少有一个条件，满足时递归不再进行，即不再引用自身而是返回值退出</p>
-<p>9、 迭代和递归的区别是： 迭代使用的是循环结构；递归使用的是选择结构</p>
-<p>10、 栈的应用–四则运算表达式求值</p>
-<pre><code>10.1  后缀（逆波兰）表示法定义
-</code></pre><p>11、 中缀表达式转后缀表达式</p>
-<p>12、 队列：是只允许在一端进行插入操作，而在另一端进行删除操作的线性表</p>
-<pre><code>注： 队列是一种先进先出（Fist In First Out）的线性表，简称FIFO，允许插入的一端为对尾，允许删除的一端称为对头
-</code></pre><p>13、 队列顺序存储</p>
-<p>14、 循环队列定义： 头尾相接的顺序存储结构称为循环队列</p>
-<p>15、 队列的链式存储结构： 其实就是线性表的单链表，只不过它只能尾进头出而已，简称为链队列</p>
-<pre><code>注：可以确定队列长度最大值的情况下，建议用循环队列，如果你无法预估队列的长度时则用链队列
-</code></pre><h2 id="第五章-串"><a href="#第五章-串" class="headerlink" title="第五章 串"></a>第五章 串</h2><p>1、 串（String）是由零个或多个字符组成的有限序列，又名叫字符串</p>
-<p>2、 串的顺序存储结构</p>
-<p>3、串的链式存储结构</p>
-<pre><code>注：串的链式存储结构除了在连接串与串操作有一定方便之外，总的来说不如顺序存储灵活，性能也不如顺序存储结构好
-</code></pre><p>4、 朴素的模式匹配算法</p>
-<p>5、 KMP模式匹配算法</p>
-<p>7、 KMP模式匹配算法改进</p>
-<p><strong>练习</strong></p>
-<pre><code>《璇玑图》破解诗篇的算法
-</code></pre><h2 id="第六章-树"><a href="#第六章-树" class="headerlink" title="第六章 树"></a>第六章 树</h2><p>1、 树（Tree）是n（n&gt;=0）个结点的有限集。n=0时称为空树，在任意一棵非空树中</p>
-<pre><code>1） 有且仅有一个特定的称为根（root）的结点；
-2） 当n&gt;1时，其余结点可分为m（m&gt;0）个互不相交的有限集T_1,T_2,...、T_m,其中每一个集合本身又是一棵树，并且称为根的子树（SubTree）如图6-2-1 所示。
-</code></pre><p>2、 结点拥有的子树数称为结点的度（Degree）。度为0的结点称为叶结点（Leaf）或终端结点；度不为0的结点称为非终端结点的度的最大值</p>
-<p>3、 结点的子树的根称为该结点的孩子（child）相应地，该结点称为孩子的双亲</p>
-<p>4、 同一个双亲的孩子之间互称兄弟（sibling）结点的祖先是从根到该结点所经分支上的所有结点，以某结点为根的子树中的任一结点都称为该结点的子孙</p>
-<p>5、 结点的层次（level）从根开始定义起，根为第一层；根的孩子为第二层</p>
-<p>6、 双亲在同一层的结点互为堂兄弟</p>
-<p>7、 树中结点的最大层次称为树的深度（Depth）或高度</p>
-<p>8、如果将树中结点的各个子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树</p>
-<p>9、 森林（Forest）是m（m&gt;=0）棵互不相交的树的集合</p>
-<p>10、 双亲表示法：在每个结点中，附设一个指示器指示其双亲结点在树组中的位置</p>
-<p>11、 存储结构的设计是一个非常灵活的过程，一个存储结构设计得是否合理，取决于基于该存储结构的运算是否合适，是否方便，时间复杂度好不好等</p>
-<p>12、 每个结点有多个指针域；其中每个指针指向一颗子树的根结点，我们把这种方法叫做多重链表表示法</p>
-<p>13、孩子表示法：把每个结点的孩子结点排列起来，以单链表作存储结构，则n个结点有 n 个孩子链表，如果是叶子结点则次单链表为空，然后 n 个头指针又组成一个线性表，采用顺序存储结构，存放进一个一维中</p>
-<p>14、 孩子兄弟表示法： 任意一棵树，它的结点的第一个孩子如果存在就是唯一的，它的左兄弟如果存在也是唯一的，因此，我们设置两个指针，分别指向该结点的第一个孩子和此结点的右兄弟</p>
-<p>15、 二叉树（Binary Tree）是 n （n&gt;=0）个结点的有限集合，该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的，分别称为根结点的左子树和右子树的二叉树组成</p>
-<p>16、 二叉树五种形态</p>
-<pre><code>16.1 空二叉树
-16.2 只有一个根结点
-16.3 根结点只有左子树
-16.4 根结点只有右子树
-16.5 根结点既有左子树又有右子树
-</code></pre><p>17、 斜树：所有的结点都只有左子树的二叉树叫左斜树，所有结点都是只有右子树的二叉树叫右斜树</p>
-<p>18、 满二叉树： 在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。</p>
-<p>19、 完全二叉树： 对一棵具有 n 个结点的二叉树按层序编号，如果编号为i（1&lt;=i&lt;=n）的结点与同样深度的满二叉树中编号为i 的结点在二叉树中位置完全相同，则这棵二叉树称为完全二叉树</p>
-<p>20、 二叉树的性质</p>
-<pre><code>20.1 在二叉树的第 i 层中至多有2^i-1个结点（i&gt;=1）
-
-20.2 深度为k 的二叉树至多有（2^k）-1个结点（k&gt;=1）
-
-20.3 对任何一棵二叉树T，如果其终端结点数为 n_0,度为2的结点数为n_2;则 n_0=n_2+1
-
-20.4 具有 n 个结点的完全二叉树的深度为【log_2 n】+1(|x|表示不大于x的最大整数)
-
-20.5 如果对一棵有 n 个结点的完全二叉树（其深度为【log_2 n】+1）的结点按层序编号（从第1层到【log_2 n】+1层，每个层从左到右），对任一结点 i (i&lt;=i&lt;=n)有：
-    20.5.1 如果i=1，则其双亲是结点【i／2】
-    20.5.2 如果2*i&gt;n;则结点 i 无左孩子（结点 i 为叶子结点）；否则左孩子是结点2*i
-    20.5.3 如果2*i+1&gt;n,则结点 i 无右孩子，否则右孩子结点2*i+1
-</code></pre><p>21、 二叉树的顺序存储结构就是用一维数组存储二叉树中的结点，并且结点的存储位置，也就是数组的下标要能体现结点之间的逻辑关系，比如双亲与孩子的关系，左右兄弟的关系等</p>
-<p>22、 二叉链表： 二叉树每个结点最多有两个孩子，所以为它设计一个数据域和两个指针域，这样称的链表叫做二叉树</p>
-<p>23、 二叉树的遍历（traversing binary tree）是指从根结点出发，按照某种次序依次访问二叉树中所有结点使得每个结点被访问一次且仅被访问一次</p>
-<p>24、 前序遍历：规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树</p>
-<p>25、 中序遍历： 规则是若树为空，则空操作返回，否则从根结点开始（注意并不是先访问根结点），中序遍历根结点的左子树，然后是访问根结点最后中序遍历右子树</p>
-<p>26、 后序遍历： 树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点</p>
-<p>27、 层序遍历：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点，逐个访问</p>
-<p>28、 指向前驱荷后继的指针称为线索；加上线索的二叉树称为线索链表，相应地二叉树就称为线索二叉树（Threaded Binary Tree）</p>
-<pre><code>注： 如果所用的二叉树需经常遍历或查找结点时需要某种遍历序列中的前驱荷后继，那么采用线索二叉链表的存储结构就是非常不错的选择
-</code></pre><p>29、 赫夫曼树及其应用 –最基本压缩编码方法</p>
-<p>30、 设需要编码的字符集为{d_1,d_2,…,d_n} 各个字符在电文中出现的次数或频率集合为{w_1,w_2,…,w_n} 以d_1,d_2,…,d_n作为叶子结点，以w_1,w_2,…,w_n 作为相应叶子结点的权值来构造一棵赫夫曼树，规定赫夫曼树的左分支代表O，右分支代表1，则从根结点到叶子结点所经过的路径分支组成的O和1的序列便为该结点对应字符的编码；这就是赫夫曼编码</p>
-<h2 id="第七章-图"><a href="#第七章-图" class="headerlink" title="第七章 图"></a>第七章 图</h2><p>1、 图（Graph）是由顶点的有穷非空集合和顶点之间的集合组成，通常表示为G（V，E），其中，G表示一个图，V是图，G中顶点的集合，E是图G中边的集合</p>
-<p>2、 有向边：若从顶点V_i 到V_j的边有方向，则称这条边为有向边，也称为弧（Arc）</p>
-<p>3、 在图中，若不存在顶点到其自身的边，且同一条边不重复出现，则称这样的图为简单的图</p>
-<p>4、 在无向图中，如果任意两个顶点之间都存在边，则称该图为无向完全图</p>
-<p>5、 有很少边或弧的图称为稀疏图，反之称为稠密图</p>
-<p>6、 路径的长度是路径上的边或弧的数目。第一个顶点到最后一个顶点相同的路径称为回路或环。序列中顶点不重复出现的路径称为简单路径。除了第一个顶点最后一个顶点之外，其余顶点不重复出现回路称为简单回路</p>
-<p>7、 在无向图G中，如果从顶点V到V1有路径，则称V和V1是连通的。如果对于图中任意两个顶点V_i,Vj属于V，Vi和Vj是连通的，则称G是连通图（Connected Graph）</p>
-<p>8、 无向图中的极大连通子图称为连通分量</p>
-<p>9、 在有向量图G中，如果对于每一对Vi，Vj属于V，Vi不等于Vj从Vi到Vj 和从Vj到Vi都存在路径，则称G是强连通图，有向图中的极大强连通子图称做有向图的强连通分量</p>
-<p>10、 图的邻接矩阵（Adjacency Matrix）存储方式，是用两个数组来表示图，一个一维数组存储图中顶点信息，一个二维数组（称为邻接矩阵）存储图中的边或弧的信息</p>
-<p>11、 邻接表：数组与链表相结合的存储方法称为邻接表</p>
-<p>12、 十子链表：能把邻接表与逆邻接表结合起来</p>
-<p>13、 ivex和jvex 是与某条边依附的两个顶点在顶点表中的下标，ilink 指向依附顶点ivex的下一条边，jlink 指向依附顶点jvex的下一条边。这就是邻接多重表结构</p>
-<p>14、 边集数组：是由两个一维数组构成。一个是存储顶点的信息，另一个是存储边的信息。这个边数组每个数据元素由一条边的起点下标（begin），终点下标（end）和权（weight）组成</p>
-<p>15、 深度优先遍历：也就称为深度优先搜索，简称为DFS</p>
-<p>16、 广度优先遍历：又称为广度优先搜索，简称BFS</p>
-<p>17、 我们把构造连通网的最少代价生成树称为最小生成树</p>
-<p>18、 普里姆算法</p>
-<p>19、 克鲁斯卡贝算法</p>
-<p>20、 最短路径 对于网图来说：最短路径：是指两顶点之间经过的边上权值之和最少的路径，并且我们称路经上的第一个顶点是源点，最后一个顶点是终点</p>
-<p>21、 迪杰斯特拉算法</p>
-<p>22、弗洛伊德算法： 如果你面临需要所有顶点至所有顶点的最短路径问题时，弗洛伊德算法应该是不错的选择</p>
-<p>23、 拓扑排序：在一个表示工程的有向图中，用顶点表示活动用弧表示活动之间的优先关系，这样的有向图为顶点表示活动的网，我们称为AOV网（Activing On Vertex Network）<br>    拓扑排序：其实就是对一个有向图构造拓扑序排的过程</p>
-<p>24、 关键路径：路径上各个活动所持续的时间之和称为路径长度，从源点到汇点具有最大长度的路径叫关键路径，在关键路径上的活动叫关键活动</p>
-<h2 id="第八章-查找"><a href="#第八章-查找" class="headerlink" title="第八章 查找"></a>第八章 查找</h2><p>1、 查找表（Search Table） 是由同一类型的数据元素（或记录）构成的集合</p>
-<p>2、 关键字（Key）是数据元素中某个数据项的值</p>
-<p>3、 查找（Searching）就是根据给定某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）</p>
-<p>4、 静态查找表（Static Search Table）：只作查找操作的查找表</p>
-<p>5、 动态查找表（Dynamic Search Table）：在查找过程中同时插入查找表中不存在的数据元素，或者从表中删除已经存在的某个数据元素</p>
-<p>6、 顺序查找（Sequential Search）：又叫线性查找，是最基本的查找技术，它的查找过程是：从表中第一个（或最后一个）记录开始，逐个进行记录的关键字和给定值比较，若某个记录的关键字和给定值相等，则查找成功，找到所查的记录；如果直到最后一个（或第一个）记录，其关键字和给定值比较都不等时，则表中没有所查的记录，查找不成功</p>
-<p>7、 折半查找（Binary Search） 时间复杂度（O_log n）</p>
-<p>8、 插值查找（Interpolation Search）是根据要查找的关键字key 与 查找表中最大最小记录的关键字比较后的查找方法，其核心就在于插值的计算公式</p>
-<pre><code>    key-a【low】
--------------------
-    a【high】-a【low】
-</code></pre><p>9、 <strong>斐波那契查找</strong></p>
-<p>10、 折半查找是进行加法与除法运算 mid=（low + high）／2），插值查找进行复杂的四则运算<br>    （mid=low + （high-low））*（key-a【low】）／（a【high】-a【low】），<br>    而斐波那契查找只是最简单加减法运算（mid=low+F【k-1】-1），在海量数据的查找过程中，这种细微的差别可能会影响最终的查找效率</p>
-<p>11、 索引就是把一个关键字与它对应的记录相关联的过程</p>
-<p>12、 索引按照结构可以分为线性索引、树型索引和多级索引</p>
-<p>13、 线性索引就是将索引项集合组织为线性结构也称为索引表</p>
-<p>14、 稠密索引：将数据集中的每个记录对应一个索引项</p>
-<pre><code>注：对于稠密索引这个索引来说，索引项一定是按照关键码有序的排列
-</code></pre><p>15、 分块索引： 是把数据集的记录分成了若干块，并且这些块需要满足两个条件</p>
-<pre><code>15.1 块内无序 即每一块内的记录不要求有序
-
-15.2 块间有序
-
-15.3 最大关键码： 它存储每一块中的最大关键字，这样的好处就是可以使得在它之后的下一块中的最小关键字也能比这一块最大的关键字要大
-
-15.4 存储了块中的记录个数，以便于循环时使用
-
-15.5 用于指向块首数据元素的指针，便于开始对这一块中记录进行遍历
-</code></pre><p>16、 倒排索引</p>
-<p>17、 其中记录号表存储具有相同次关键字的所有记录号（可以是指向记录的指针或者是该记录的主关键字），这样的索引方法就是倒排索引（inverted index）</p>
-<p>18、 二叉排列树（Binary Sort Tree）又称为二叉查找树，它或者是一棵空树，或者是具有下列性质的二叉树</p>
-<pre><code>18.1 若它的左子树不空，则左子树上所有结点的值均小于它的根结构的值
-
-18.2 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值
-
-18.3 它的左右子树也分别为二叉排列树
-</code></pre><p>19、 二叉排序树插入操作</p>
-<p>20、 平衡二叉树（Self-Balancing Binary Search Tree 或Height-Balanced Binary Search Tree）是一种二叉树，其中一个节点的左子树和右子树的高度差至多等于1</p>
-<p>21、 将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF（Balance Factor）</p>
-<pre><code>注：距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树，称为最小不平衡子树
-</code></pre><p>22、 多路查找树（muitl - way Search tree） 其每一个结点的孩子树可以多于两个，且每一个结点处可以存储对过元素</p>
-<p>23、 2-3树：是这样一棵多路查找树：其中的每一个结点都具有两个孩子（我们称它为2结点）或三个孩子（我们称它为 3 结点）<br>    23.1 一个2 结点包含一个元素和两个孩子，一个3 结点包含一小一大两个元素和三个孩子</p>
-<p>24、 2-3-4树：就是2-3树的概念扩展，包括了4结点的使用，一个4结点包含小、中大三个元素和四个孩子（或没有孩子）</p>
-<p>25、 B树（B-tree）是一种平衡的多路查找树</p>
-<p>26、 B+树的结构特别适合带有范围的查找，比如查找我们学校18～22岁的学生人数</p>
-<p>27、 散列技术是在记录的存储位置和它的关键字之间建立一个确定的对应关系f，使得每个关键字key对应一个存储位置f（key）</p>
-<pre><code>注：这种对应关系f称为散列函数，又称为哈希（Hash）函数，按这个思想采用散列技术将记录存储在一块连续的存储空间中，这块连续存储空间称为散列表或哈希表（Hash table）
-</code></pre><p>28、 散列技术既是一种存储方法，也是一种查找方法</p>
-<p>29、 散列技术最适合的求解问题是查找与给定值相等的记录</p>
-<p>30、 散列函数因素参与：</p>
-<pre><code>30.1 计算散列地址所需的时间
-
-30.2 关键字的长度
-
-30.3 散列表的大小
-
-30.4 关键字的分布情况
-
-30.5 记录查找的频率，综合这些因素
-</code></pre><p>31、 开放定址法： 一旦发生了冲突；就去寻找下一个空的散列地址，只要散列表足够大，空的散列地址总能找到，并将记录存入</p>
-<pre><code>f（key）=（f（key）+d_i）MODm(d_i=1,2,3,..,m-1)
-</code></pre><p>解决冲突的开放地址法称为线性探测法增加平方运算的目的是为了不让关键字都聚集在某一块区域我们称这种方法为二次探测法</p>
-<pre><code>f_i(key)=(f(key)+d_i)MOD m (d_i=1^2,-1^2,2^2,-2^2,...,q^2,-q^2) q&lt;=m/2
-</code></pre><p>在冲突时，对于移量d_i采用随机函数i+算得到，我们称之为随机探测法 </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2017/03/17/book-2-clean-code/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lichong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/17/book-2-clean-code/" itemprop="url">《代码整洁之道》</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T05:17:03+08:00">
-                2017-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://omnk3xsvf.bkt.clouddn.com/timg.jpeg" alt="Alt text"></p>
-<pre><code>无规矩不成方圆；书写代码就像写作一样。要有一定的书写方式方法才能写出让人一目了然的好代码。
-最后升华到犹如艺术的境界
-</code></pre><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>举例说明什么是糟糕的、混乱的代码；什么是整洁的代码；介绍多位大牛对代码的思想；</p>
-<p>童子军军规“<strong>让营地比你来时更干净</strong>”</p>
-<h3 id="第二章-有意义的命名"><a href="#第二章-有意义的命名" class="headerlink" title="第二章 有意义的命名"></a>第二章 有意义的命名</h3><p>给变量、函数、参数、类、和包等命名。</p>
-<p>名副其实；避免误导；做有意义的区分；使用读的出来的名称；使用可搜索的名称；避免使用编码；</p>
-<p>匈牙利语标记法；无前缀；</p>
-<p>接口和实现IShapFactory–&gt;ShapFactoryImp</p>
-<p>避免思维映射“<strong>明确是王道</strong>”，循环计数不要用“l”</p>
-<p>类名和对象名应该是名词或名词短语</p>
-<p>方法名应当是动词或动词短语；别耍宝；别用双关词；使用解决方案领域名称</p>
-<p>添加有意义的语镜；</p>
-<h3 id="第三章-函数"><a href="#第三章-函数" class="headerlink" title="第三章 函数"></a>第三章 函数</h3><p>短小；只做一件事；</p>
-<p>每个函数一个抽象层级</p>
-<p>switch语句（<strong>只出现一次，用于创建多态对象，且隐藏在某个继承关系中，系统其他部分看不到</strong>）</p>
-<p><strong>使用异常替代返回错误码</strong></p>
-<p><strong>抽离Tty／Catch代码块</strong></p>
-<p>错误处理就是一件事</p>
-<p>别重复自己；结构化编程；如何写出这样的函数</p>
-<h3 id="第四章-注释"><a href="#第四章-注释" class="headerlink" title="第四章 注释"></a>第四章 注释</h3><p>喃喃自语；废话注释；注释掉的代码；</p>
-<h3 id="第五章-格式"><a href="#第五章-格式" class="headerlink" title="第五章 格式"></a>第五章 格式</h3><p>向报纸学习；概念间垂直方向上的区隔</p>
-<p>团队规则；</p>
-<h3 id="第六章-对象和数据结构"><a href="#第六章-对象和数据结构" class="headerlink" title="第六章 对象和数据结构"></a>第六章 对象和数据结构</h3><p>The Law of Demeter 对象隐藏数据，曝露操作</p>
-<h3 id="第七章-错误处理"><a href="#第七章-错误处理" class="headerlink" title="第七章 错误处理"></a>第七章 错误处理</h3><p>使用异常而非返回码；使用不可控异常；依调用者需要定义异常类；定义常规流程；</p>
-<p><strong>别返回null</strong>；<strong>别传递null</strong></p>
-<h3 id="第八章-边界"><a href="#第八章-边界" class="headerlink" title="第八章 边界"></a>第八章 边界</h3><p><strong>学习性测试</strong>；学习log4j；</p>
-<h3 id="第九章-单元测试"><a href="#第九章-单元测试" class="headerlink" title="第九章 单元测试"></a>第九章 单元测试</h3><p>TDD三定律；保持测试整洁；测试和代码一样重要；</p>
-<p>每个测试一个断言；</p>
-<p>F（快速fast）I（独立independ）R（repeatable可重复）S（自足验证Self-Validating）T（Timely及时）</p>
-<h3 id="第十章-类"><a href="#第十章-类" class="headerlink" title="第十章 类"></a>第十章 类</h3><p>类的组织；类应该短小；为了修改而组织；</p>
-<h3 id="第十一章-系统"><a href="#第十一章-系统" class="headerlink" title="第十一章 系统"></a>第十一章 系统</h3><p>将系统构造与使用分开；纯Java AOP框架；</p>
-<h3 id="第十二章-迭进"><a href="#第十二章-迭进" class="headerlink" title="第十二章 迭进"></a>第十二章 迭进</h3><p>运行所有测试；重构；不可重复；尽可能少的类和方法</p>
-<h3 id="第十三章-并发编程（建立多个demo来理解）"><a href="#第十三章-并发编程（建立多个demo来理解）" class="headerlink" title="第十三章 并发编程（建立多个demo来理解）"></a>第十三章 并发编程（建立多个demo来理解）</h3><p>对象是过程的抽象，线程是调度的抽象</p>
-<p>并发防御原则；了解执行模型；</p>
-<h3 id="第十五章-JUnit内幕"><a href="#第十五章-JUnit内幕" class="headerlink" title="第十五章 JUnit内幕"></a>第十五章 JUnit内幕</h3><h3 id="第十七章-味道与启发"><a href="#第十七章-味道与启发" class="headerlink" title="第十七章 味道与启发"></a>第十七章 味道与启发</h3><p>注释；环境；函数；重复；晦涩的意图；</p>
-<p>用多态替代If/else或者switch／case；避免否定性条件；</p>
-<p>避免传递浏览； </p>
-
           
         
       
@@ -2117,7 +1961,7 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2130,7 +1974,7 @@ d) newScheduledThreadPool：创建一个定长的线程池，而且支持定时�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

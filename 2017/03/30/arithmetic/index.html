@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Lc">
 <meta property="og:description" content="冒泡排序public static void bubbleSort(int[] a) {     if (a == null) {         return;     }      for (int i = 0; i &amp;lt; a.length; i++) {         for (int j = a.length - 1; j &amp;gt; i; j--) {             if">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-09T22:04:19.000Z">
+<meta property="og:updated_time" content="2019-07-15T06:41:57.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法（java版）">
 <meta name="twitter:description" content="冒泡排序public static void bubbleSort(int[] a) {     if (a == null) {         return;     }      for (int i = 0; i &amp;lt; a.length; i++) {         for (int j = a.length - 1; j &amp;gt; i; j--) {             if">
@@ -330,6 +330,75 @@
         System.out.println(a[i]);
     }
 }
+</code></pre><h2 id="朴素模式匹配算法"><a href="#朴素模式匹配算法" class="headerlink" title="朴素模式匹配算法"></a>朴素模式匹配算法</h2><pre><code>//朴素模式匹配算法
+    public static int index(String s,String t,int pos){
+    int i=pos;//主串中第几个位置开始比较
+    int j=0;//模式串中的第一个位置
+    while(i&lt;s.length()&amp;&amp;j&lt;t.length()){
+        if(s.charAt(i)==t.charAt(j)){
+            i++;
+            j++;
+        }else{
+            i=i-j+1;//主串的下一个位置
+            j=0;//继续第一个位置
+        }
+    }
+    if(j&gt;=t.length()){
+        return i-t.length();
+    }else{
+        return -1;
+    }
+}
+</code></pre><h2 id="KMP模式匹配算法"><a href="#KMP模式匹配算法" class="headerlink" title="KMP模式匹配算法"></a>KMP模式匹配算法</h2><pre><code>//////////KMP模式匹配算法////////////////
+    public static int[] getNext(String t){
+        System.out.println(t);
+        int[] next=new int[t.length()];
+        int i=1;
+        int j=0;
+
+        next[i]=j;
+
+        while(i&lt;t.length()-1){
+
+            if(j==0||t.charAt(i)==t.charAt(j)){
+//                System.out.print(&quot;i=&quot;+i+&quot; &quot;+t.charAt(i)+&quot;、&quot;);
+//                System.out.print(&quot;j=&quot;+j+&quot; &quot;+t.charAt(j)+&quot;;&quot;);
+                i++;
+                j++;
+                next[i]=j;
+            }else{
+                System.out.println();
+                j=next[j];//若字符不相等，则j值进行回溯。
+            }
+
+        }
+        System.out.println();
+        for(int k=0;k&lt;next.length;k++){
+            System.out.print(next[k]);
+        }
+        System.out.println();
+        return next;
+    }
+
+    public static int indexKMP(String s,String t,int pos){
+        int i=pos;//表示从主串中第几个字符串开始匹配
+        int j=0;//表示从模式串中第几个字符串开始
+        int[] next=getNext(t);
+        while(i&lt;s.length()&amp;&amp;j&lt;t.length()){
+            if(j==0||s.charAt(i)==t.charAt(j)){
+                i++;
+                j++;
+            }else{
+                j=next[j];
+            }
+        }
+        if(j&gt;=t.length()){
+            return i-t.length();
+        }else{
+            return 0;
+        }
+
+    }
 </code></pre>
       
     </div>
@@ -449,7 +518,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -462,7 +531,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -495,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素模式匹配算法"><span class="nav-number">2.</span> <span class="nav-text">朴素模式匹配算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP模式匹配算法"><span class="nav-number">3.</span> <span class="nav-text">KMP模式匹配算法</span></a></li></ol></div>
             
 
           </div>

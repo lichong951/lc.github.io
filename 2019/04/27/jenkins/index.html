@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="自动构建,Jenkins,纲要,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲 目录  JDKAndroid SDKGitJenkinsGradleNode配置Job二维码生成集成RSSapk版本设置为名称 Apk版本设置为名称 参考https://juejin.im/entry/5adaa9ecf265da0ba062b9a1  JDK 安装  下载地址：http">
+<meta name="keywords" content="自动构建,Jenkins,纲要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins搭建设计大纲">
+<meta property="og:url" content="https://lichong951.github.io/2019/04/27/jenkins/index.html">
+<meta property="og:site_name" content="Lc">
+<meta property="og:description" content="Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲 目录  JDKAndroid SDKGitJenkinsGradleNode配置Job二维码生成集成RSSapk版本设置为名称 Apk版本设置为名称 参考https://juejin.im/entry/5adaa9ecf265da0ba062b9a1  JDK 安装  下载地址：http">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://lichong951.github.io/2019/04/27/pic/Jenkins/微信截图_20190411143758.png">
+<meta property="og:image" content="https://lichong951.github.io/2019/04/27/pic/android/studio-homepage-hero.jpg">
+<meta property="og:image" content="https://lichong951.github.io/2019/04/27/pic/android/QQ截图20190413172923.png">
+<meta property="og:image" content="https://lichong951.github.io/2019/04/27/pic/Jenkins/微信截图_20190413175119.png">
+<meta property="og:image" content="https://lichong951.github.io/2019/04/27/pic/Jenkins/ssr4040.png">
+<meta property="og:image" content="https://lichong951.github.io/2019/04/27/pic/Jenkins/20150309000424548.png">
+<meta property="og:updated_time" content="2019-07-15T06:56:22.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jenkins搭建设计大纲">
+<meta name="twitter:description" content="Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲 目录  JDKAndroid SDKGitJenkinsGradleNode配置Job二维码生成集成RSSapk版本设置为名称 Apk版本设置为名称 参考https://juejin.im/entry/5adaa9ecf265da0ba062b9a1  JDK 安装  下载地址：http">
+<meta name="twitter:image" content="https://lichong951.github.io/2019/04/27/pic/Jenkins/微信截图_20190411143758.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lichong951.github.io/2019/04/27/jenkins/">
+
+
+
+
+
+  <title>Jenkins搭建设计大纲 | Lc</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?182a59a031a7cdcc77ab75af4f61bb5b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lc</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">lichong博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lichong951.github.io/2019/04/27/jenkins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lichong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Jenkins搭建设计大纲</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T10:07:03+08:00">
+                2019-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Jenkins-AndroidSDK-Node-js-http-server-qr-jar-163邮箱服务大纲"><a href="#Jenkins-AndroidSDK-Node-js-http-server-qr-jar-163邮箱服务大纲" class="headerlink" title="Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲"></a>Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲</h2><blockquote>
+<p>目录</p>
+</blockquote>
+<p><a href="#JDK">JDK</a><br><a href="#Android SDK">Android SDK</a><br><a href="#Git">Git</a><br><a href="#Jenkins">Jenkins</a><br><a href="#Gradle">Gradle</a><br><a href="#Node">Node</a><br><a href="#配置Job">配置Job</a><br><a href="#二维码生成">二维码生成</a><br><a href="#集成RSS">集成RSS</a><br><a href="#Apk版本设置为名称">apk版本设置为名称</a><br><a href="#"></a></p>
+<h2 id="Apk版本设置为名称"><a href="#Apk版本设置为名称" class="headerlink" title="Apk版本设置为名称"></a>Apk版本设置为名称</h2><blockquote>
+<p>参考<br><a href="https://juejin.im/entry/5adaa9ecf265da0ba062b9a1" target="_blank" rel="noopener">https://juejin.im/entry/5adaa9ecf265da0ba062b9a1</a><br><a href></a></p>
+</blockquote>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><blockquote>
+<p>安装</p>
+</blockquote>
+<p>下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<p>根据电脑环境安装合适的版本</p>
+<blockquote>
+<p>配置</p>
+</blockquote>
+<pre><code>在&quot;用户变量&quot;中设置3项属性，JAVA_HOME,PATH,CLASSPATH(不区分大小写),若已存在则点击&quot;编辑&quot;，注意用分号与前面的隔开，不存在则点击&quot;新建&quot;。
+
+变量设置参数如下：
+
+变量名： JAVA_HOME
+变量值： C:\Program Files\Java\jdk1.8.0_111
+变量名： Path
+变量值： %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+变量名： CLASSPATH
+变量值： .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;       
+注意：这前面有一个点‘.’
+</code></pre><blockquote>
+<p>测试</p>
+</blockquote>
+<pre><code>command(window键)+R,然后输入cmd,确定后输入命令: java、javac 几个命令
+</code></pre><p><img src="../pic/Jenkins/微信截图_20190411143758.png" alt></p>
+<h2 id="Android-SDK"><a href="#Android-SDK" class="headerlink" title="Android SDK"></a>Android SDK</h2><blockquote>
+<p>sdk安装<br>下载地址：<a href="https://developer.android.com/studio" target="_blank" rel="noopener">Android Studio</a></p>
+</blockquote>
+<p>下载Android studio即可在安装流程里下载AndroidSDK<br><img src="../pic/android/studio-homepage-hero.jpg" alt="studio"></p>
+<blockquote>
+<p>环境配置（可选）</p>
+</blockquote>
+<p>ANDROID_HOME=“安装目录”</p>
+<blockquote>
+<p>测试<br>使用adb进行命令测试如下图</p>
+</blockquote>
+<p><img src="../pic/android/QQ截图20190413172923.png" alt></p>
+<blockquote>
+<p>参考</p>
+</blockquote>
+<p><a href="https://developer.android.com/studio" target="_blank" rel="noopener">Android Studio</a></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><blockquote>
+<p>安装<br>安装教程<br><a href="https://www.jianshu.com/p/414ccd423efc" target="_blank" rel="noopener">https://www.jianshu.com/p/414ccd423efc</a></p>
+</blockquote>
+<blockquote>
+<p>测试<br>在终端输入 “git –version”如下图：</p>
+</blockquote>
+<p><img src="../pic/Jenkins/微信截图_20190413175119.png" alt></p>
+<blockquote>
+<p>ssh<br>    ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com" target="_blank" rel="noopener">youremail@example.com</a>“</p>
+</blockquote>
+<p>验证</p>
+<pre><code>例子：ssh -T git@code.aliyun.com
+返回 Welcome to GIT, 用户名! 成功
+</code></pre><blockquote>
+<p>参考地址<br><a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener">官网安装教程</a></p>
+</blockquote>
+<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>Jenkins特性：</p>
+<p>1、易于安装-本文提供四种配置方式。</p>
+<p>2、易于配置-所有配置都是通过其提供的web界面实现。</p>
+<p>3、<strong>集成RSS</strong>/E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知。</p>
+<p>4、生成JUnit/TestNG测试报告。</p>
+<p>5、分布式构建支持Jenkins能够让多台计算机一起构建/测试。</p>
+<p>6、文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等。</p>
+<p>7、插件支持:支持扩展插件，你可以开发适合自己团队使用的工具。</p>
+<p>8、Jenkins一切配置都可以在web界面上完成。有些配置如MAVEN_HOME和Email，只需要配置一次，所有的项目就都能用。当然也可以通过修改XML进行配置。</p>
+<p>9、支持Maven的模块(Module)，Jenkins对Maven做了优化，因此它能自动识别Module，每个Module可以配置成一个job。相当灵活。</p>
+<p>10、测试报告聚合，所有模块的测试报告都被聚合在一起，结果一目了然，使用其他CI，这几乎是件不可能完成的任务。</p>
+<p>11、构件指纹(artifact fingerprint)，每次build的结果构件都被很好的自动管理，无需任何配置就可以方便的浏览下载。</p>
+<blockquote>
+<p>平台安装</p>
+</blockquote>
+<p><a href="https://link.jianshu.com/?t=https%3A%2F%2Fjenkins.io%2F" target="_blank" rel="noopener">jenkins官网</a></p>
+<ul>
+<li>mac</li>
+</ul>
+<p><code>brew install jenkins</code></p>
+<ul>
+<li>window</li>
+</ul>
+<p>官网下载Jenkin.war包</p>
+<p><a href="https://www.jianshu.com/p/400b4516b98e" target="_blank" rel="noopener">安装方式参考</a></p>
+<blockquote>
+<p>各种插件配置见<a href="#Jenkins插件列表">Jenkins插件列表</a></p>
+</blockquote>
+<blockquote>
+<p>测试运行</p>
+</blockquote>
+<ul>
+<li><p>mac</p>
+<p>  <code>jenkins</code></p>
+</li>
+<li><p>window</p>
+<p><code>java -jar jenkins.war</code> </p>
+</li>
+</ul>
+<h2 id="Jenkins插件列表"><a href="#Jenkins插件列表" class="headerlink" title="Jenkins插件列表"></a>Jenkins插件列表</h2><ul>
+<li>Build Timeout</li>
+<li>description setter plugin</li>
+<li>Email Extension Plugin</li>
+<li>GitHub Branch Source Plugin</li>
+<li>Gradle Plugin</li>
+<li>SSH Slaves plugin</li>
+<li>Timestamper</li>
+<li>Publish over ssh</li>
+<li></li>
+</ul>
+<blockquote>
+<p>参考地址<br><a href="https://www.jianshu.com/p/400b4516b98e" target="_blank" rel="noopener">https://www.jianshu.com/p/400b4516b98e</a><br><a href="https://blog.csdn.net/RonnyJiang/article/details/51208009" target="_blank" rel="noopener">https://blog.csdn.net/RonnyJiang/article/details/51208009</a><br><a href="https://segmentfault.com/a/1190000015391418" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015391418</a></p>
+</blockquote>
+<h2 id="Gradle-可选"><a href="#Gradle-可选" class="headerlink" title="Gradle(可选)"></a>Gradle(可选)</h2><p><a href="https://gradle.org/" target="_blank" rel="noopener">Gradle官网</a></p>
+<blockquote>
+<p>各平台安装</p>
+<ul>
+<li>mac</li>
+</ul>
+</blockquote>
+<p><code>brew install gradle</code></p>
+<ul>
+<li>liunx、unbuntu和centos</li>
+</ul>
+<p><code>sdk install gradle 4.6</code></p>
+<ul>
+<li><blockquote>
+<p>环境变量配置</p>
+</blockquote>
+</li>
+</ul>
+<p><code>$ export PATH=$PATH:/opt/gradle/gradle-4.6/bin</code></p>
+<blockquote>
+<p>测试</p>
+</blockquote>
+<p><code>gradle -v</code></p>
+<p>出现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------</span><br><span class="line">Gradle 4.6</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Build time:   2018-02-28 13:36:36 UTC</span><br><span class="line">Revision:     8fa6ce7945b640e6168488e4417f9bb96e4ab46c</span><br><span class="line"></span><br><span class="line">Groovy:       2.4.12</span><br><span class="line">Ant:          Apache Ant(TM) version 1.9.9 compiled on February 2 2017</span><br><span class="line">JVM:          1.8.0_161 (Oracle Corporation 25.161-b12)</span><br><span class="line">OS:           Mac OS X 10.13.3 x86_64</span><br></pre></td></tr></table></figure>
+<ul>
+<li>window</li>
+</ul>
+<p><code>scoop install gradle</code></p>
+<p>注意：</p>
+<ul>
+<li>windows可以使用scoop安装</li>
+<li><p>windows还可以使用Chocolatey包管理器安装</p>
+<p>另：手动安装就不介绍了</p>
+</li>
+</ul>
+<h2 id="二维码生成"><a href="#二维码生成" class="headerlink" title="二维码生成"></a>二维码生成</h2><blockquote>
+<p>安装</p>
+</blockquote>
+<blockquote>
+<p>配置<br>测试</p>
+</blockquote>
+<blockquote>
+<p>注：忘记在哪下载的qr.jar包。如有需要发邮件<a href="#联系我">联系我</a></p>
+</blockquote>
+<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><blockquote>
+<p>安装<br>配置<br>测试<br>npm install http-server -g</p>
+</blockquote>
+<h2 id="配置Job"><a href="#配置Job" class="headerlink" title="配置Job"></a>配置Job</h2><blockquote>
+<p>构建触发器</p>
+</blockquote>
+<p>时间设置说明</p>
+<pre><code>* * * * *
+(五颗星，中间用空格隔开）
+第一颗*表示分钟，取值0~59
+第二颗*表示小时，取值0~23
+第三颗*表示一个月的第几天，取值1~31
+第四颗*表示第几月，取值1~12
+第五颗*表示一周中的第几天，取值0~7，其中0和7代表的都是周日
+</code></pre><p>例子如下：</p>
+<pre><code>每15分钟构建一次：H/15 * * * *   或*/5 * * * *
+每天8点构建一次：0 8 * * *
+每天8点~17点，两小时构建一次：0 8-17/2 * * *
+周一到周五，8点~17点，两小时构建一次：0 8-17/2 * * 1-5
+每月1号、15号各构建一次，除12月：H H 1,15 1-11 *
+*/5 * * * * （每5分钟检查一次源码变化）
+0 2 * * * （每天2:00 必须build一次源码）
+</code></pre><blockquote>
+<p>构建操作</p>
+</blockquote>
+<pre><code>echo %JOB_NAME%
+echo %BUILD_NUMBER%
+echo %WORKSPACE%
+copy %WORKSPACE%\app\build\outputs\apk\debug\app-debug.apk C:\Users\{user}\public\apk\%JOB_NAME%-debug-%BUILD_NUMBER%.apk
+cd C:\jenkins
+java -jar qr.jar url=http://10.1.17.54:8000/apk/%JOB_NAME%-debug-%BUILD_NUMBER%.apk image=%JOB_NAME%-debug-%BUILD_NUMBER%.jpg save=C:\Users\{user}\public\qr_img
+</code></pre><blockquote>
+<p>Set build desc</p>
+</blockquote>
+<pre><code>&lt;img src=&apos;http://10.1.17.54:8000/qr_img/${JOB_NAME}-debug-${BUILD_NUMBER}.jpg&apos; width=&quot;200px&quot; height=&quot;200px&quot; &gt;
+</code></pre><h2 id="集成RSS"><a href="#集成RSS" class="headerlink" title="集成RSS"></a>集成RSS</h2><blockquote>
+<p>邮件通知格式</p>
+</blockquote>
+<p>163邮箱通知设置</p>
+<p><a href="https://blog.csdn.net/yamingwu/article/details/44142635" target="_blank" rel="noopener">https://blog.csdn.net/yamingwu/article/details/44142635</a></p>
+<h3 id="模板一"><a href="#模板一" class="headerlink" title="模板一"></a>模板一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">(本邮件是程序自动下发的，请勿回复！)&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">项目名称：$PROJECT_NAME&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">构建编号：$BUILD_NUMBER&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">触发原因：$&#123;CAUSE&#125;&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">构建状态：$BUILD_STATUS&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">扫描二维码 </span><br><span class="line">&lt;img src=&quot;http://10.1.90.39:8000/qr_img/$&#123;JOB_NAME&#125;-$&#123;BUILD_NUMBER&#125;.jpg&quot; height=&quot;200px&quot; width=&quot;200px&quot;/&gt;&lt;br/&gt;</span><br><span class="line">下载地址：&lt;a href=&quot;http://10.1.90.39:8000/apk/$&#123;JOB_NAME&#125;-$&#123;BUILD_NUMBER&#125;.apk&quot;&gt;http://10.1.90.39:8000/apk/$&#123;JOB_NAME&#125;-$&#123;BUILD_NUMBER&#125;.apk&lt;/a&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">构建日志地址：&lt;a href=&quot;$&#123;BUILD_URL&#125;console&quot;&gt;$&#123;BUILD_URL&#125;console&lt;/a&gt;&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">构建地址：&lt;a href=&quot;$BUILD_URL&quot;&gt;$BUILD_URL&lt;/a&gt;&lt;br/&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">变更集:$&#123;JELLY_SCRIPT,template=&quot;html&quot;&#125;&lt;br/&gt;&lt;hr/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="模板二"><a href="#模板二" class="headerlink" title="模板二"></a>模板二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(邮件由Jenkins自动发出，请勿回复~)&lt;br&gt;</span><br><span class="line">项目名称：$PROJECT_NAME&lt;br&gt;</span><br><span class="line">构建编号：$BUILD_NUMBER&lt;br&gt;</span><br><span class="line">构建状态：$BUILD_STATUS&lt;br&gt;</span><br><span class="line">触发原因：$&#123;CAUSE&#125;&lt;br&gt;</span><br><span class="line">构建地址：&lt;A HREF=&quot;$&#123;BUILD_URL&#125;&quot;&gt;$&#123;BUILD_URL&#125;&lt;/A&gt;&lt;br&gt;</span><br><span class="line">构建输出日志：&lt;a href=&quot;$&#123;BUILD_URL&#125;console&quot;&gt;$&#123;BUILD_URL&#125;console&lt;/a&gt;&lt;br&gt;</span><br><span class="line">下载地址：&lt;a href=&quot;http://10.1.67.54:8000/apk/$&#123;JOB_NAME&#125;-debug-$&#123;BUILD_NUMBER&#125;.apk&quot;&gt;http://10.1.67.54:8000/apk/$&#123;JOB_NAME&#125;-debug-$&#123;BUILD_NUMBER&#125;.apk&lt;/a&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">二维码下载：&lt;img src=&apos;http://10.1.67.54:8000/qr_img/$&#123;JOB_NAME&#125;-debug-$&#123;BUILD_NUMBER&#125;.jpg&apos; width=&quot;200px&quot; height=&quot;200px&quot; &gt;&lt;br&gt;</span><br><span class="line">最近修改：&lt;br&gt;$&#123;CHANGES, showPaths=false, format=&quot;%a：\&quot;%m\&quot;&lt;br&gt;&quot;, pathFormat=&quot;\n\t- %p&quot;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>建议使用“邮箱大师”|“Foxmail”接收邮件</p>
+</blockquote>
+<h2 id="疑难解决"><a href="#疑难解决" class="headerlink" title="疑难解决"></a>疑难解决</h2><blockquote>
+<p> 553 Mail from must equal authorized user<br><img src="../pic/Jenkins/ssr4040.png" alt><br>有些人错误为501 mail from address must be same as authorization user;其实问题是一样的</p>
+</blockquote>
+<p>需要在Jenkins Location中配置系统管理员邮件地址</p>
+<p><img src="../pic/Jenkins/20150309000424548.png" alt></p>
+<p>解决方式如下：<br><a href="https://blog.csdn.net/yamingwu/article/details/44142635" target="_blank" rel="noopener">https://blog.csdn.net/yamingwu/article/details/44142635</a></p>
+<blockquote>
+<p>SSLHandshakeException</p>
+</blockquote>
+<hr>
+<p>There were errors checking the update sites: SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<hr>
+<h2 id="附一-参考"><a href="#附一-参考" class="headerlink" title="附一 参考"></a>附一 参考</h2><p><a href="https://blog.csdn.net/u013066244/article/details/78665075" target="_blank" rel="noopener">https://blog.csdn.net/u013066244/article/details/78665075</a></p>
+<h2 id="附二-常见问题汇总"><a href="#附二-常见问题汇总" class="headerlink" title="附二 常见问题汇总"></a>附二 常见问题汇总</h2><p>Jenkins默认会在Build结束后Kill掉所有的衍生进程，导致后台无法运行应用程序。</p>
+<p>在Post Steps -&gt;Execute Shell 中配置的应用程序启动脚本启动后，当Build结束，进程会被Jenkins杀掉。为了在退出Build时继续运行程序，需要进行以下配置，才能避免此类情况发生。</p>
+<p>7.1 方式一</p>
+<p>a、重设环境变量build_id</p>
+<p>在execute shell输入框中加入BUILD_ID=DONTKILLME,即可防止jenkins杀死启动的应用程序进程</p>
+<p>b、在启动jenkins 的时候禁止jenkins杀死衍生进程</p>
+<p>修改/etc/sysconfig/jenkins配置，在JENKINS_JAVA_OPTIONS中加入-Dhudson.util.ProcessTree.disable=true。需要重启jenkins生效。此方法配置一次后，所有的job都无需设置BUILD_ID，就能够防止jenkins杀死启动的应用程序进程。</p>
+<p>7.2、方式二</p>
+<p>添加 Post build task插件,在 Post build task 处执行脚本。</p>
+<p>每当检测到项目编译信息中包含log text中的文本即执行script中的shell脚本。此处执行脚本启动的进程，jenkins不会自动kill。</p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><blockquote>
+<p>QQ:94297366</p>
+</blockquote>
+<blockquote>
+<p>Email: <a href="mailto:&#x6c;&#105;&#99;&#x68;&#x6f;&#110;&#x67;&#109;&#x61;&#99;&#64;&#49;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#x6c;&#105;&#99;&#x68;&#x6f;&#110;&#x67;&#109;&#x61;&#99;&#64;&#49;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/自动构建-Jenkins-纲要/" rel="tag"># 自动构建,Jenkins,纲要</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/27/flutter_win/" rel="next" title="【win】Flutter安装记录">
+                <i class="fa fa-chevron-left"></i> 【win】Flutter安装记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/15/serial-prot-helper/" rel="prev" title="串口工具">
+                串口工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">lichong</p>
+              <p class="site-description motion-element" itemprop="description">读书笔记；移动开发；node.js</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-AndroidSDK-Node-js-http-server-qr-jar-163邮箱服务大纲"><span class="nav-number">1.</span> <span class="nav-text">Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apk版本设置为名称"><span class="nav-number">2.</span> <span class="nav-text">Apk版本设置为名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK"><span class="nav-number">3.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-SDK"><span class="nav-number">4.</span> <span class="nav-text">Android SDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">5.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins"><span class="nav-number">6.</span> <span class="nav-text">Jenkins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins插件列表"><span class="nav-number">7.</span> <span class="nav-text">Jenkins插件列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradle-可选"><span class="nav-number">8.</span> <span class="nav-text">Gradle(可选)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维码生成"><span class="nav-number">9.</span> <span class="nav-text">二维码生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node"><span class="nav-number">10.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Job"><span class="nav-number">11.</span> <span class="nav-text">配置Job</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成RSS"><span class="nav-number">12.</span> <span class="nav-text">集成RSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板一"><span class="nav-number">12.1.</span> <span class="nav-text">模板一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板二"><span class="nav-number">12.2.</span> <span class="nav-text">模板二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疑难解决"><span class="nav-number">13.</span> <span class="nav-text">疑难解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附一-参考"><span class="nav-number">14.</span> <span class="nav-text">附一 参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附二-常见问题汇总"><span class="nav-number">15.</span> <span class="nav-text">附二 常见问题汇总</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联系我"><span class="nav-number">16.</span> <span class="nav-text">联系我</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lichong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
